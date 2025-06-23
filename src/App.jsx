@@ -1,34 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Avatar, Button, Card, Stack, Center, Box, Text, Heading } from "@chakra-ui/react"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Center minH="100vh" bg="bg.emphasized" px={4}>
+      <Card.Root maxW="md" w="100%" p={8} boxShadow="xl" borderRadius="xl" alignItems="center" gap="2">
+        <Avatar.Root size="xl" >
+          <Avatar.Image src="/public/images/profile.jpg" />
+          <Avatar.Fallback name="Recep" />
+        </Avatar.Root>
+        <Card.Title size="2x1" >
+          Recep's Portfolio
+        </Card.Title>
+        <Text fontSize="md" color="gray.500" mb={6} textAlign="center">
+          Full Stack Developer specializing in React, Python, and modern web technologies. Explore my FIFA-style interactive portfolio!
+        </Text>
+        <Button colorScheme="yellow" size="lg" fontWeight="bold">
+          View Projects
+        </Button>
+      </Card.Root>
+    </Center>
   )
 }
 
