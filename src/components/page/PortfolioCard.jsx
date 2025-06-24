@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, Center, Box, Text} from "@chakra-ui/react";
+import { Avatar, Button, Card, Center, Text} from "@chakra-ui/react";
 
 
 function PortfolioCard() {
