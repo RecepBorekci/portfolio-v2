@@ -9,7 +9,7 @@ function PortfolioCard() {
             <Avatar.Image src="/public/images/profile.jpg" />
             <Avatar.Fallback name="Recep" />
           </Avatar.Root>
-          <Card.Title size="2x1">
+          <Card.Title size="2xl">
             Recep's Portfolio
           </Card.Title>
           <Text fontSize="md" color="gray.500" mb={6} textAlign="center">
