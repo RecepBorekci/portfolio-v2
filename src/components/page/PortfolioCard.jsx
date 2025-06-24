@@ -1,26 +1,20 @@
-import { Avatar, Button, Card, Center, Text} from "@chakra-ui/react";
-
-
 function PortfolioCard() {
-    return (
-        <Center minH="100vh" px={4} position="relative" zIndex={1} >
-        <Card.Root maxW="md" w="100%" p={8} boxShadow="xl" borderRadius="xl" alignItems="center" gap="2">
-          <Avatar.Root size="xl">
-            <Avatar.Image src="/public/images/profile.jpg" />
-            <Avatar.Fallback name="Recep" />
-          </Avatar.Root>
-          <Card.Title size="2xl">
-            Recep's Portfolio
-          </Card.Title>
-          <Text fontSize="md" color="gray.500" mb={6} textAlign="center">
-            Full Stack Developer specializing in React, Python, and modern web technologies. Explore my FIFA-style interactive portfolio!
-          </Text>
-          <Button colorScheme="yellow" size="lg" fontWeight="bold">
-            View Projects
-          </Button>
-        </Card.Root>
-      </Center>
-    )
+  return (
+    <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
+      <div className="max-w-md w-full p-8 bg-white/5 backdrop-blur-md rounded-xl shadow-xl flex flex-col items-center gap-2">
+        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-300">
+          <img src="/images/profile.jpg" alt="Recep" className="w-full h-full object-cover" />
+        </div>
+        <h2 className="text-2xl font-bold text-white">Recep's Portfolio</h2>
+        <p className="text-md text-gray-400 mb-6 text-center">
+          Full Stack Developer specializing in React, Python, and modern web technologies. Explore my FIFA-style interactive portfolio!
+        </p>
+        <button className="bg-gray-100 hover:bg-gray-200 text-black font-bold py-2 px-4 rounded-lg">
+          View Projects
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default PortfolioCard;
