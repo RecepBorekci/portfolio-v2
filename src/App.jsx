@@ -1,25 +1,19 @@
-import { Avatar, Button, Card, Stack, Center, Box, Text, Heading } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react";
+import SpotlightBackground from "./components/page/SpotlightBackground"
+import PortfolioCard from "./components/page/PortfolioCard"
 
 function App() {
   return (
-    <Center minH="100vh" bg="bg.emphasized" px={4}>
-      <Card.Root maxW="md" w="100%" p={8} boxShadow="xl" borderRadius="xl" alignItems="center" gap="2">
-        <Avatar.Root size="xl" >
-          <Avatar.Image src="/public/images/profile.jpg" />
-          <Avatar.Fallback name="Recep" />
-        </Avatar.Root>
-        <Card.Title size="2x1" >
-          Recep's Portfolio
-        </Card.Title>
-        <Text fontSize="md" color="gray.500" mb={6} textAlign="center">
-          Full Stack Developer specializing in React, Python, and modern web technologies. Explore my FIFA-style interactive portfolio!
-        </Text>
-        <Button colorScheme="yellow" size="lg" fontWeight="bold">
-          View Projects
-        </Button>
-      </Card.Root>
-    </Center>
-  )
+    <Box 
+      minH="100vh"
+      overflow="hidden"
+      position="relative"
+      bg="blue.900"
+    >
+      <SpotlightBackground/>
+      <PortfolioCard/>
+    </Box>
+  );
 }
 
-export default App
+export default App;
