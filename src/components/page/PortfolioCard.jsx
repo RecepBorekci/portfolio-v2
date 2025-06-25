@@ -6,7 +6,7 @@ function PortfolioCard() {
           <img src="/images/profile.jpg" alt="Recep" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold text-white">Recep's Portfolio</h2>
-        <p className="text-md text-gray-400 mb-6 text-center">
+        <p className="text-base text-gray-400 mb-6 text-center">
           Full Stack Developer specializing in React, Python, and modern web technologies. Explore my FIFA-style interactive portfolio!
         </p>
         <button className="bg-gray-100 hover:bg-gray-200 text-black font-bold py-2 px-4 rounded-lg">
