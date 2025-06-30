@@ -7,7 +7,7 @@ export default function InfoButton({ icon, label }) {
       lg:flex-col xl:flex-row
       bg-white/10 hover:bg-white/20 text-white border border-white/20
       rounded-md 
-      text-white     
+      
       px-4 py-2 
       text-[3.5vw] lg:text-[1.2vw] xl:text-[0.9vw] 
       min-w-[80px] lg:min-w-[6vw] xl:min-w-[6vw]

@@ -37,7 +37,7 @@ export default function SidePanel({ mirrored = false }) {
       <div className="w-[50%] aspect-square rounded-full overflow-hidden">
         <img
           src="/images/AGU.jpg"
-          alt="team"
+          alt="AGU team logo"
           className="w-full h-full object-cover"
           style={{
             transform: mirrored ? "skewY(-2deg)" : "skewY(2deg)",
@@ -49,7 +49,7 @@ export default function SidePanel({ mirrored = false }) {
       <div className="w-[85%] aspect-[4/3]">
         <img
           src="/images/Flag_of_Turkey.svg.webp"
-          alt="flag"
+          alt="Flag of Turkey"
           className="w-full h-full object-contain"
           style={{
             transform: mirrored ? "skewY(-2deg)" : "skewY(2deg)",
