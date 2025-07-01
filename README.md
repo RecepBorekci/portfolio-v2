@@ -1,12 +1,25 @@
-# React + Vite
+# ⚽ FIFA Card Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my interactive portfolio website inspired by FIFA card opening packs! This project showcases my skills and experience in a fun, engaging format that football fans will instantly recognize.
 
-Currently, two official plugins are available:
+## 🎯 What You'll Find Here
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio transforms the traditional resume into an interactive FIFA-style player card experience. Just like opening a pack in FIFA, visitors can discover my professional "stats" and information through an immersive interface.
 
-## Expanding the ESLint configuration
+### Key Features:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Player Card Display**: A FIFA-style card showing my professional "stats" and profile
+- **Interactive Menu**: Navigate through different sections (Profile, Season, Stats, Team, League, Country) using the info buttons
+- **Stadium Atmosphere**: Immersive background that creates the feeling of being in a football stadium
+- **Responsive Design**: Optimized for all devices - from mobile phones to large desktop screens
+- **Smooth Animations**: Engaging interactions that make the experience feel dynamic and polished
+
+## 🚀 What Makes This Special
+
+Instead of a traditional portfolio, this website gamifies the experience of learning about my background. Each section reveals different aspects of my professional journey, making it memorable and engaging for visitors.
+
+Whether you're a hiring manager, potential client, or just curious about my work, this portfolio offers a unique way to explore my skills and experience in an interactive format that stands out from the crowd.
+
+---
+
+_Built with React, Vite, and Tailwind CSS_
