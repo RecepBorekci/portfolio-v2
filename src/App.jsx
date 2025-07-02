@@ -1,59 +1,38 @@
-import Platform from "./components/Platform";
-import PlayerCard from "./components/PlayerCard";
-import SidePanel from "./components/SidePanel";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import MainPage from "./pages/MainPage";
 import InfoMenu from "./components/InfoMenu";
+import { Routes, Route } from "react-router-dom";
+import ProfilePage from "./pages/ProfilePage";
+import SeasonPage from "./pages/SeasonPage";
+import StatsPage from "./pages/StatsPage";
+import TeamPage from "./pages/TeamPage";
 
 function App() {
+  // App.jsx
+
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
   return (
-    <div
-      className="
-    min-h-screen overflow-hidden relative 
-    flex flex-col items-center justify-center gap-10
-  "
-    >
+    <div>
       <img
         src="/images/Stadium.jpg"
         alt="stadium"
-        className="absolute top-0 left-0 w-full h-full object-cover xl:object-top z-0"
+        className={`absolute top-0 left-0 w-full h-full object-cover xl:object-top z-0 transition-all duration-500 ${
+          isMainPage ? "" : "blur-md brightness-50"
+        }`}
       />
       {/* InfoMenu */}
       <InfoMenu />
 
-      {/* Container for screens below xl - maintains existing flexbox layout */}
-      <div className="xl:hidden relative w-full max-w-[1280px] px-4 flex items-center justify-around">
-        {/* Left Panel */}
-        <div className="hidden lg:block self-end">
-          <SidePanel />
-        </div>
-
-        {/* Player Card */}
-        <div className="flex justify-center ">
-          <PlayerCard />
-        </div>
-
-        {/* Right Panel */}
-        <div className="hidden lg:block self-end">
-          <SidePanel mirrored />
-        </div>
-      </div>
-
-      {/* Container for xl+ screens - new relative positioned container */}
-      <div className="hidden xl:block relative w-full max-w-[1678px] h-[800px]">
-        {/* Platform positioned at bottom */}
-        <Platform />
-
-        {/* Left Panel - absolutely positioned */}
-        <div className="hidden lg:block">
-          <SidePanel />
-        </div>
-
-        {/* Player Card - absolutely positioned */}
-        <PlayerCard />
-
-        {/* Right Panel - absolutely positioned */}
-        <div className="hidden lg:block">
-          <SidePanel mirrored />
-        </div>
+      <div className="bg-black/30 min-h-screen z-10 relative">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/season" element={<SeasonPage />} />
+          <Route path="/stats" element={<StatsPage />} />
+          <Route path="/team" element={<TeamPage />} />
+        </Routes>
       </div>
     </div>
   );
