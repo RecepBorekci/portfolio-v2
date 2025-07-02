@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import InfoMenu from "./components/InfoMenu";

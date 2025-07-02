@@ -4,18 +4,16 @@ import {
   FaCalendarAlt,
   FaChartBar,
   FaUsers,
-  FaTrophy,
-  FaFlag,
   FaHome,
 } from "react-icons/fa";
 
 export default function InfoMenu() {
   const buttonData = [
-    { icon: <FaHome />, label: "Main", path: "/" },
-    { icon: <FaUser />, label: "Profile", path: "/profile" },
-    { icon: <FaCalendarAlt />, label: "Season", path: "/season" },
-    { icon: <FaChartBar />, label: "Stats", path: "/stats" },
-    { icon: <FaUsers />, label: "Team", path: "/team" },
+    { id: 0, icon: <FaHome />, label: "Main", path: "/" },
+    { id: 1, icon: <FaUser />, label: "Profile", path: "/profile" },
+    { id: 2, icon: <FaCalendarAlt />, label: "Season", path: "/season" },
+    { id: 3, icon: <FaChartBar />, label: "Stats", path: "/stats" },
+    { id: 4, icon: <FaUsers />, label: "Team", path: "/team" },
   ];
 
   return (
@@ -24,7 +22,7 @@ export default function InfoMenu() {
       <div className="hidden xl:flex xl:flex-col fixed left-4 top-1/2 -translate-y-1/2 gap-4 z-50">
         {buttonData.map((button, idx) => (
           <InfoButton
-            key={idx}
+            key={button.id}
             icon={button.icon}
             label={button.label}
             path={button.path}
@@ -36,7 +34,7 @@ export default function InfoMenu() {
       <div className="hidden lg:flex xl:hidden fixed bottom-4 left-1/2 -translate-x-1/2 gap-2 z-50">
         {buttonData.map((button, idx) => (
           <InfoButton
-            key={idx}
+            key={button.id}
             icon={button.icon}
             label={button.label}
             path={button.path}
