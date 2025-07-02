@@ -24,7 +24,7 @@ function App() {
       {/* InfoMenu */}
       <InfoMenu />
 
-      <div className="bg-black/30 min-h-screen z-10 relative">
+      <div className={`min-h-screen z-10 relative ${!isMainPage ? "bg-black/30" : ""}`}>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />

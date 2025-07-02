@@ -20,7 +20,7 @@ export default function InfoMenu() {
     <>
       {/* Left side of screen (xl only) */}
       <div className="hidden xl:flex xl:flex-col fixed left-4 top-1/2 -translate-y-1/2 gap-4 z-50">
-        {buttonData.map((button, idx) => (
+        {buttonData.map((button) => (
           <InfoButton
             key={button.id}
             icon={button.icon}
