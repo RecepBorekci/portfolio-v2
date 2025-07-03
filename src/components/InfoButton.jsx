@@ -25,7 +25,7 @@ export default function InfoButton({ icon, label, path }) {
       }}
     >
       {icon}
-      <span>{label}</span>
+      <span className="font-inter">{label}</span>
     </NavLink>
   );
 }
