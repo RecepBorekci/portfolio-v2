@@ -3,7 +3,7 @@ import { portfolioData } from "../data/portfolio";
 export default function SidePanel({ mirrored = false }) {
   const stats = portfolioData.playerCardData.stats;
   const avg = Math.round(
-    stats.reduce((acc, cur) => acc + parseInt(cur.points), 0) / stats.length
+    stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length
   );
 
   return (
