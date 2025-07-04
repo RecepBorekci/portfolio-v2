@@ -1,20 +1,8 @@
 import InfoButton from "./InfoButton";
-import {
-  FaUser,
-  FaCalendarAlt,
-  FaChartBar,
-  FaUsers,
-  FaHome,
-} from "react-icons/fa";
+import { portfolioData } from "../data/portfolio";
 
 export default function InfoMenu() {
-  const buttonData = [
-    { id: 0, icon: <FaHome />, label: "Main", path: "/" },
-    { id: 1, icon: <FaUser />, label: "Profile", path: "/profile" },
-    { id: 2, icon: <FaCalendarAlt />, label: "Season", path: "/season" },
-    { id: 3, icon: <FaChartBar />, label: "Stats", path: "/stats" },
-    { id: 4, icon: <FaUsers />, label: "Team", path: "/team" },
-  ];
+  const buttonData = portfolioData.infoMenuData.buttonData;
 
   return (
     <>
@@ -32,7 +20,7 @@ export default function InfoMenu() {
 
       {/* Bottom center for lg only */}
       <div className="hidden lg:flex xl:hidden fixed bottom-4 left-1/2 -translate-x-1/2 gap-2 z-50">
-        {buttonData.map((button, idx) => (
+        {buttonData.map((button) => (
           <InfoButton
             key={button.id}
             icon={button.icon}

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function InfoButton({ icon, label, path }) {
+export default function InfoButton({ icon: Icon, label, path }) {
   return (
     <NavLink
       to={path}
@@ -24,7 +24,7 @@ export default function InfoButton({ icon, label, path }) {
         return base + color;
       }}
     >
-      {icon}
+      <Icon />
       <span className="font-inter">{label}</span>
     </NavLink>
   );

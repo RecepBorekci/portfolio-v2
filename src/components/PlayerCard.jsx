@@ -1,4 +1,8 @@
+import { portfolioData } from "../data/portfolio";
+
 export default function PlayerCard() {
+  const stats = portfolioData.playerCardData.stats;
+
   return (
     <div
       className="
@@ -42,17 +46,10 @@ export default function PlayerCard() {
 
         {/* Stats section */}
         <div className="h-[60%] grid grid-cols-2 gap-[2] pt-2 text-[4vw] sm:text-[3.5vw] md:text-[3vw] lg:text-[1.5vw] xl:text-[1vw]">
-          {[
-            { stat: "Goals", points: "15" },
-            { stat: "Assists", points: "8" },
-            { stat: "Saves", points: "24" },
-            { stat: "Tackles", points: "12" },
-            { stat: "Passes", points: "89" },
-            { stat: "Rating", points: "8.5" },
-          ].map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
+          {stats.map((item) => (
+            <div key={item.id} className="flex flex-col items-center">
               <span className="text-[1.2em] font-medium text-gray-600">
-                {item.stat}
+                {item.label}
               </span>
               <span className="text-[1.5em] font-bold text-gray-800">
                 {item.points}
