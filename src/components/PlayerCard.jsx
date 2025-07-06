@@ -1,26 +1,21 @@
 import { portfolioData } from "../data/portfolio";
 
-export default function PlayerCard() {
+export default function PlayerCard({ size = "full" }) {
   const stats = portfolioData.playerCardData.stats;
+
+  const isMini = size === "mini";
 
   return (
     <div
-      className="
-    relative 
-    w-[90vw]
-    sm:w-[80vw] 
-    lg:w-[26vw] 
-    xl:w-[22vw] 
-    max-w-none
-    md:max-w-[640px] 
-    lg:max-w-[384px] 
-    aspect-[384/662]
-    xl:absolute
-    xl:bottom-[120px]
-    xl:left-1/2
-    xl:-translate-x-1/2
-    xl:z-10
-      "
+      className={`relative ${
+        isMini
+          ? "w-[180px] sm:w-[200px] md:w-[220px] max-w-[40vw]"
+          : "w-[90vw] sm:w-[80vw] lg:w-[26vw] xl:w-[22vw] max-w-none md:max-w-[640px] lg:max-w-[384px]"
+      } aspect-[384/662] ${
+        isMini
+          ? ""
+          : "xl:absolute xl:bottom-[120px] xl:left-1/2 xl:-translate-x-1/2 xl:z-10"
+      }`}
     >
       <svg
         viewBox="0 0 384 662"
@@ -45,13 +40,19 @@ export default function PlayerCard() {
         </div>
 
         {/* Stats section */}
-        <div className="h-[60%] grid grid-cols-2 gap-[2] pt-2 text-[4vw] sm:text-[3.5vw] md:text-[3vw] lg:text-[1.5vw] xl:text-[1vw]">
+        <div
+          className={`h-[60%] grid grid-cols-2 gap-[2] pt-2 ${
+            isMini
+              ? "text-[0.8rem]"
+              : "text-[4vw] sm:text-[3.5vw] md:text-[3vw] lg:text-[1.5vw] xl:text-[1vw]"
+          }`}
+        >
           {stats.map((item) => (
             <div key={item.id} className="flex flex-col items-center">
-              <span className="text-[1.2em] font-medium text-gray-600">
+              <span className="font-medium text-gray-600 1.2em">
                 {item.label}
               </span>
-              <span className="text-[1.5em] font-bold text-gray-800">
+              <span className="font-bold text-gray-800 text-[1.5em]">
                 {item.points}
               </span>
             </div>
