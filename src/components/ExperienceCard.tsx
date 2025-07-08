@@ -1,4 +1,10 @@
-function ExperienceCard({ experience }) {
+import { Experience } from "../types/portfolio";
+
+interface ExperienceCardProps {
+  experience: Experience;
+}
+
+function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <div className="bg-blue-900/45 rounded-3xl p-4 shadow-lg grid grid-cols-2 items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[280px] hover:scale-[1.01] hover:shadow-2xl">
       {/* Left - Logo */}

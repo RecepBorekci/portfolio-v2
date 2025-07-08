@@ -6,7 +6,19 @@ import {
   FaHome,
 } from "react-icons/fa";
 
-export const portfolioData = {
+import {
+  Stat,
+  InfoMenuItem,
+  ProfileData,
+  Experience,
+} from "../types/portfolio";
+
+export const portfolioData: {
+  playerCardData: { stats: Stat[] };
+  infoMenuData: { buttonData: InfoMenuItem[] };
+  profilePageData: ProfileData;
+  seasonPageData: Experience[];
+} = {
   playerCardData: {
     stats: [
       {

@@ -1,8 +1,9 @@
-import portfolioData from "../data/portfolio";
+import { portfolioData } from "../data/portfolio";
 import ExperienceCard from "../components/ExperienceCard";
+import { Experience } from "../types/portfolio";
 
 function SeasonPage() {
-  const seasonPageData = portfolioData.seasonPageData;
+  const seasonPageData: Experience[] = portfolioData.seasonPageData;
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">

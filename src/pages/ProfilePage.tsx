@@ -1,9 +1,11 @@
-import MyAvatar from "/images/MyAvatar.png";
 import PlayerCard from "../components/PlayerCard";
-import portfolioData from "../data/portfolio";
+import { portfolioData } from "../data/portfolio";
+import { ProfileData } from "../types/portfolio";
+
+const MyAvatar = "/images/MyAvatar.png";
 
 function ProfilePage() {
-  const { name, title, description, skills, languages, hobbies } =
+  const { name, title, description, skills, languages, hobbies }: ProfileData =
     portfolioData.profilePageData;
 
   return (

@@ -1,8 +1,9 @@
 import InfoButton from "./InfoButton";
+import { InfoMenuItem } from "../types/portfolio";
 import { portfolioData } from "../data/portfolio";
 
 export default function InfoMenu() {
-  const buttonData = portfolioData.infoMenuData.buttonData;
+  const buttonData: InfoMenuItem[] = portfolioData.infoMenuData.buttonData;
 
   return (
     <>

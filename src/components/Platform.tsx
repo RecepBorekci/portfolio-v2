@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Platform() {
   return (
     <div className="w-[80vw] h-full flex justify-center xl:absolute xl:bottom-0 xl:left-1/2 xl:-translate-x-1/2 xl:z-20 xl:w-auto xl:h-auto">

@@ -1,7 +1,6 @@
 import Platform from "../components/Platform";
 import PlayerCard from "../components/PlayerCard";
 import SidePanel from "../components/SidePanel";
-import InfoMenu from "../components/InfoMenu";
 
 function MainPage() {
   return (
