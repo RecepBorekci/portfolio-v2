@@ -8,8 +8,6 @@ import StatsPage from "./pages/StatsPage";
 import TeamPage from "./pages/TeamPage";
 
 function App() {
-  // App.jsx
-
   const location = useLocation();
   const isMainPage = location.pathname === "/";
   return (
@@ -24,7 +22,11 @@ function App() {
       {/* InfoMenu */}
       <InfoMenu />
 
-      <div className={`min-h-screen z-10 relative ${!isMainPage ? "bg-black/30" : ""}`}>
+      <div
+        className={`min-h-screen z-10 relative ${
+          !isMainPage ? "bg-black/30" : ""
+        }`}
+      >
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />

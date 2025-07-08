@@ -1,6 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { IconType } from "react-icons";
 
-export default function InfoButton({ icon: Icon, label, path }) {
+interface InfoButtonProps {
+  icon: IconType;
+  label: string;
+  path: string;
+}
+
+export default function InfoButton({
+  icon: Icon,
+  label,
+  path,
+}: InfoButtonProps) {
   return (
     <NavLink
       to={path}

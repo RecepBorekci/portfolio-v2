@@ -1,7 +1,12 @@
 import { portfolioData } from "../data/portfolio";
+import { Stat } from "../types/portfolio";
 
-export default function SidePanel({ mirrored = false }) {
-  const stats = portfolioData.playerCardData.stats;
+interface SidePanelProps {
+  mirrored?: boolean;
+}
+
+export default function SidePanel({ mirrored = false }: SidePanelProps) {
+  const stats: Stat[] = portfolioData.playerCardData.stats;
   const avg = Math.round(
     stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length
   );

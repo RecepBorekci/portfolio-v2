@@ -1,6 +1,10 @@
 import { portfolioData } from "../data/portfolio";
 
-export default function PlayerCard({ size = "full" }) {
+interface PlayerCardProps {
+  size?: "full" | "mini";
+}
+
+export default function PlayerCard({ size = "full" }: PlayerCardProps) {
   const stats = portfolioData.playerCardData.stats;
 
   const isMini = size === "mini";
