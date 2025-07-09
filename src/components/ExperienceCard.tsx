@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Experience } from "../types/portfolio";
 
 interface ExperienceCardProps {
@@ -33,9 +34,16 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
             </span>
           ))}
         </div>
-        <span className="mt-2 text-sm text-yellow-300 hover:underline">
-          View More →
-        </span>
+        <Link
+          to={`/season/${experience.company
+            .toLowerCase()
+            .replace(/\s+/g, "-")}`}
+          className="w-fit"
+        >
+          <span className="mt-2 text-sm text-yellow-300 hover:underline">
+            View More →
+          </span>
+        </Link>
       </div>
     </div>
   );

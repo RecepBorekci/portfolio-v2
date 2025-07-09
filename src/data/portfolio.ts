@@ -122,7 +122,7 @@ export const portfolioData: {
       startDate: "04/04/2023",
       endDate: "17/07/2024",
       description:
-        "I worked as a junior frontend developer at ButikO. I was responsible for the development of the company's website.",
+        "As a junior frontend developer, I built and maintained scalable React.js components for ButikO’s e-commerce platform, collaborating daily with a small agile team. I contributed to live feature development, bug fixing, and API integration to enhance user experience across the site.",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVZz-k5CuFJs3CeoistlTayfD9p6u1eAXDdQ&s",
       tags: [
         "JavaScript",
@@ -135,6 +135,12 @@ export const portfolioData: {
         "Teamwork",
         "Communication",
       ],
+      whatILearned: [
+        "Developed and maintained production-ready React.js components for a live e-commerce platform.",
+        "Collaborated in a small agile team through daily Zoom stand-ups and shared Git workflows.",
+        "Improved debugging and problem-solving skills by resolving frontend issues and performance bottlenecks.",
+        "Worked closely with backend developers to integrate REST APIs, ensuring smooth UX and data flow.",
+      ],
     },
     {
       id: 1,
@@ -143,7 +149,7 @@ export const portfolioData: {
       startDate: "03/07/2023",
       endDate: "28/07/2023",
       description:
-        "I worked as a frontend intern at Orta Anadolu. I was responsible for the development of the company's website.",
+        "During this short-term internship, I completed my first real-world React project: a responsive portfolio website, fully designed, coded, and deployed independently. The experience helped me put theory into practice and build production-level UI with reusable components.",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKvBfJCLN-mAStMFOCyo_e2mhbvFu6Au17Rg&s",
       tags: [
         "React.js",
@@ -153,6 +159,11 @@ export const portfolioData: {
         "Responsive Design",
         "GitHub",
       ],
+      whatILearned: [
+        "Completed the Web Development Bootcamp by Angela Yu prior to the internship.",
+        "Built my first portfolio project with React.js from scratch, deploying it live to production.",
+        "Gained hands-on experience with component-based architecture and responsive UI design using Bootstrap and MUI.",
+      ],
     },
     {
       id: 2,
@@ -161,7 +172,7 @@ export const portfolioData: {
       startDate: "22/07/2024",
       endDate: "13/09/2024",
       description:
-        "I worked as a system admin intern at Turkcell. I was responsible for the maintenance and support of the company's systems.",
+        "At Kaymet, I developed AI-powered backend services using OpenAI’s API, FastAPI, and SQL to support real-time financial analysis. My work included building a Text-to-SQL pipeline and an arbitrage pricing tool integrated into the company’s LLM system.",
       logo: "https://ffo3gv1cf3ir.merlincdn.net/SiteAssets/Hakkimizda/genel-bakis/logolarimiz/TURKCELL_DIKEY_ERKEK_LOGO.jpg",
       tags: [
         "Windows Server",
@@ -173,6 +184,12 @@ export const portfolioData: {
         "VMware",
         "System Administration",
       ],
+      whatILearned: [
+        "Configured Hyper-V virtual environments, RAID setups, and Active Directory under expert mentorship.",
+        "Set up VPNs, NAT, and port forwarding while learning hands-on network security best practices.",
+        "Used tools like HPE iLO, Smart Update Manager, and Nessus for server monitoring and patching.",
+        "Practiced troubleshooting and diagnostics with Event Viewer, Performance Monitor, and Microsoft SQL Clustering.",
+      ],
     },
     {
       id: 3,
@@ -181,7 +198,7 @@ export const portfolioData: {
       startDate: "10/02/2025",
       endDate: "30/05/2025",
       description:
-        "I worked as a LLM engineer intern at Kaymet. I was responsible for the development of the company's website.",
+        "At Kaymet, I developed AI-powered backend services using OpenAI’s API, FastAPI, and SQL to support real-time financial analysis. My work included building a Text-to-SQL pipeline and an arbitrage pricing tool integrated into the company’s LLM system.",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbiWGF20-bp2jgYj-J59ikJRCHddtrVjCE0g&s",
       tags: [
         "OpenAI",
@@ -195,6 +212,12 @@ export const portfolioData: {
         "Teamwork",
         "Communication",
         "Daily Meetings",
+      ],
+      whatILearned: [
+        "Engineered backend microservices using FastAPI and OpenAI’s API to deliver LLM-driven insights.",
+        "Designed a full-stack Text-to-SQL pipeline with context-aware natural language queries and SQL execution.",
+        "Built an arbitrage pricing engine using OpenAI function calling, real-time logic, and SQL views.",
+        "Gained experience in Dockerized deployment and AWS-hosted infrastructure for LLM tooling.",
       ],
     },
   ],

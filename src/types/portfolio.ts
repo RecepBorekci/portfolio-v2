@@ -42,4 +42,5 @@ export interface Experience {
   description: string;
   logo: string;
   tags: string[];
+  whatILearned: string[];
 }
