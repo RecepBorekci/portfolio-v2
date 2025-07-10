@@ -6,6 +6,7 @@ import ProfilePage from "./pages/ProfilePage";
 import SeasonPage from "./pages/SeasonPage";
 import StatsPage from "./pages/StatsPage";
 import TeamPage from "./pages/TeamPage";
+import ExperienceDetailPage from "./pages/ExperienceDetailPage";
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/season" element={<SeasonPage />} />
+          <Route path="/season/:slug" element={<ExperienceDetailPage />} />
           <Route path="/stats" element={<StatsPage />} />
           <Route path="/team" element={<TeamPage />} />
         </Routes>
