@@ -172,7 +172,7 @@ export const portfolioData: {
       startDate: "22/07/2024",
       endDate: "13/09/2024",
       description:
-        "At Kaymet, I developed AI-powered backend services using OpenAI’s API, FastAPI, and SQL to support real-time financial analysis. My work included building a Text-to-SQL pipeline and an arbitrage pricing tool integrated into the company’s LLM system.",
+        "I gained hands-on experience with server infrastructure, virtual machines, and network security protocols, working directly under the mentorship of seasoned system administrators.",
       logo: "https://ffo3gv1cf3ir.merlincdn.net/SiteAssets/Hakkimizda/genel-bakis/logolarimiz/TURKCELL_DIKEY_ERKEK_LOGO.jpg",
       tags: [
         "Windows Server",
