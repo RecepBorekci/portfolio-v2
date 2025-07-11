@@ -28,7 +28,7 @@ function StatsPage() {
               className="flex items-stretch gap-4"
             >
               {/* Main Category on the Left */}
-              <div className="bg-gray-800/80 border border-gray-600/30 rounded-lg p-4 text-center flex-shrink-0 w-2/7 flex flex-col justify-center">
+              <div className="bg-gray-800/80 border border-gray-600/30 rounded-lg p-4 text-center flex-shrink-0 w-[30%] flex flex-col justify-center">
                 {/* Circular Progress Indicator */}
                 <div className="relative w-16 h-16 mx-auto mb-2">
                   <svg
@@ -72,9 +72,9 @@ function StatsPage() {
 
               {/* Sub-stats flowing horizontally to the right */}
               <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {category.substats.map((substat, index) => (
+                {category.substats.map((substat) => (
                   <div
-                    key={index}
+                    key={`${category.id}-${substat.id}`}
                     className="bg-gray-700/50 rounded px-3 py-3 text-sm"
                   >
                     <div className="flex justify-between items-center">
@@ -155,9 +155,9 @@ function StatsPage() {
 
               {/* Sub-stats */}
               <div className="space-y-2">
-                {category.substats.map((substat, index) => (
+                {category.substats.map((substat) => (
                   <div
-                    key={index}
+                    key={`${category.id}-${substat.id}`}
                     className="bg-gray-700/50 rounded px-3 py-4 text-sm mb-2"
                   >
                     <div className="flex justify-between items-center">

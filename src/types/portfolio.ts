@@ -49,8 +49,8 @@ export interface StatCategory {
   id: number;
   name: string;
   value: number;
-  color: string;
   substats: {
+    id: number;
     label: string;
     value: number;
   }[];
