@@ -11,6 +11,7 @@ import {
   InfoMenuItem,
   ProfileData,
   Experience,
+  StatCategory,
 } from "../types/portfolio";
 
 export const portfolioData: {
@@ -18,6 +19,7 @@ export const portfolioData: {
   infoMenuData: { buttonData: InfoMenuItem[] };
   profilePageData: ProfileData;
   seasonPageData: Experience[];
+  statsPageData: StatCategory[];
 } = {
   playerCardData: {
     stats: [
@@ -44,7 +46,7 @@ export const portfolioData: {
       },
       {
         id: 3,
-        label: "SQL",
+        label: "Databases",
         points: 94,
         tooltip:
           "Advanced in writing queries, views, joins, optimization, and MySQL/PostgreSQL",
@@ -218,6 +220,86 @@ export const portfolioData: {
         "Designed a full-stack Text-to-SQL pipeline with context-aware natural language queries and SQL execution.",
         "Built an arbitrage pricing engine using OpenAI function calling, real-time logic, and SQL views.",
         "Gained experience in Dockerized deployment and AWS-hosted infrastructure for LLM tooling.",
+      ],
+    },
+  ],
+  statsPageData: [
+    {
+      id: 0,
+      name: "Frontend",
+      value: 85,
+      color: "#38bdf8",
+      substats: [
+        { label: "React.js", value: 97 },
+        { label: "TypeScript", value: 84 },
+        { label: "Responsive Design", value: 88 },
+        { label: "Next.js", value: 72 },
+        { label: "Component Architecture", value: 85 },
+      ],
+    },
+    {
+      id: 1,
+      name: "Backend",
+      value: 79,
+      color: "#22c55e",
+      substats: [
+        { label: "RESTful API Design", value: 85 },
+        { label: "Relational Databases", value: 78 },
+        { label: "Java (Basics)", value: 81 },
+        { label: "Software Design Principles", value: 71 },
+      ],
+    },
+    {
+      id: 2,
+      name: "AI / LLM",
+      value: 83,
+      color: "#f97316",
+      substats: [
+        { label: "LLMs (OpenAI, Anthropic)", value: 92 },
+        { label: "LangChain / Prompting", value: 68 },
+        { label: "Natural Language Processing", value: 74 },
+        { label: "scikit-learn / Classic ML", value: 94 },
+        { label: "HuggingFace", value: 80 },
+        { label: "Data Preprocessing", value: 89 },
+      ],
+    },
+    {
+      id: 3,
+      name: "Databases",
+      value: 81,
+      color: "#eab308",
+      substats: [
+        { label: "PostgreSQL / MySQL", value: 89 },
+        { label: "Views & Joins", value: 95 },
+        { label: "Stored Procedures", value: 72 },
+        { label: "Data Integrity & Constraints", value: 87 },
+        { label: "Query Optimization", value: 67 },
+        { label: "Data Modeling & Normalization", value: 74 },
+      ],
+    },
+    {
+      id: 4,
+      name: "DevOps",
+      value: 74,
+      color: "#a855f7",
+      substats: [
+        { label: "Docker", value: 74 },
+        { label: "CI/CD (GitHub Actions)", value: 84 },
+        { label: "AWS", value: 42 },
+        { label: "Git & GitHub", value: 94 },
+      ],
+    },
+    {
+      id: 5,
+      name: "Soft Skills",
+      value: 90,
+      color: "#facc15",
+      substats: [
+        { label: "Communication", value: 82 },
+        { label: "Teamwork", value: 85 },
+        { label: "Work Ethic", value: 97 },
+        { label: "Adaptability", value: 90 },
+        { label: "Problem-Solving", value: 98 },
       ],
     },
   ],
