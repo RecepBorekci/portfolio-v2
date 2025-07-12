@@ -49,9 +49,11 @@ export interface StatCategory {
   id: number;
   name: string;
   value: number;
-  substats: {
-    id: number;
-    label: string;
-    value: number;
-  }[];
+  substats: StatSubCategory[];
+}
+
+export interface StatSubCategory {
+  id: number;
+  label: string;
+  value: number;
 }
