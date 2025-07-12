@@ -44,3 +44,16 @@ export interface Experience {
   tags: string[];
   whatILearned: string[];
 }
+
+export interface StatCategory {
+  id: number;
+  name: string;
+  value: number;
+  substats: StatSubCategory[];
+}
+
+export interface StatSubCategory {
+  id: number;
+  label: string;
+  value: number;
+}
