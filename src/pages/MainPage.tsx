@@ -13,7 +13,7 @@ function MainPage() {
       {/* Container for screens below xl - maintains existing flexbox layout */}
       <div className="xl:hidden relative w-full max-w-[1280px] px-4 flex items-center justify-around">
         {/* Left Panel */}
-        <div className="hidden lg:block self-end">
+        <div className="hidden md:block self-end">
           <SidePanel />
         </div>
 
@@ -23,7 +23,7 @@ function MainPage() {
         </div>
 
         {/* Right Panel */}
-        <div className="hidden lg:block self-end">
+        <div className="hidden md:block self-end">
           <SidePanel mirrored />
         </div>
       </div>
