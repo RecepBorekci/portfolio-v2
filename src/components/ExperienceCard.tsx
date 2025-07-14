@@ -12,7 +12,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
       <div className="flex items-center justify-center">
         <img
           src={experience.logo}
-          className="max-h-[100px] xl:max-h-[160px] object-contain"
+          className="h-50 max-h-[100px] md:max-h-[120px] xl:max-h-[160px] w-50 max-w-[160px] md:max-w-[120px] xl:max-w-[160px] object-cover"
           alt={`${experience.company} logo`}
         />
       </div>
