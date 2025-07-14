@@ -1,5 +1,7 @@
 import { portfolioData } from "../data/portfolio";
 import { Stat } from "../types/portfolio";
+import LeftSidePanelBackground from "./LeftSidePanelBackground.svg";
+import RightSidePanelBackground from "./RightSidePanelBackground.svg";
 
 interface SidePanelProps {
   mirrored?: boolean;
@@ -17,7 +19,6 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         relative 
         aspect-[2/4] 
         flex flex-col items-center justify-around 
-        bg-yellow-500 
         p-[1vw] 
         w-[14vw] 
         sm:w-[12vw] 
@@ -26,6 +27,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         xl:absolute
         xl:bottom-[80px]
         xl:z-10
+        overflow-hidden
         ${mirrored ? "xl:right-[10%]" : "xl:left-[10%]"}
       `}
       style={{
@@ -34,8 +36,19 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
           : "polygon(0% 0, 100% 7%, 100% 100%, 0 100%)",
       }}
     >
+      {/* SVG Background */}
+      <span
+        className="absolute inset-0 w-full h-full pointer-events-none select-none z-0"
+        aria-hidden="true"
+      >
+        <img
+          src={mirrored ? RightSidePanelBackground : LeftSidePanelBackground}
+          alt="side panel background"
+          className="w-full h-full object-cover"
+        />
+      </span>
       {/* This panel is not visible below lg */}
-      <div className="text-[2.5vw] lg:text-[3.8vw] xl:text-[3vw] font-bold">
+      <div className="text-[2.5vw] lg:text-[3.8vw] xl:text-[3vw] font-bold z-10">
         <div
           style={{
             transform: mirrored ? "skewY(-3deg)" : "skewY(3deg)",
@@ -46,7 +59,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         </div>
       </div>
 
-      <div className="w-[50%] aspect-square rounded-full overflow-hidden">
+      <div className="w-[50%] aspect-square rounded-full overflow-hidden z-10">
         <img
           src="/images/AGU.jpg"
           alt="AGU team logo"
@@ -58,7 +71,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         />
       </div>
 
-      <div className="w-[85%] aspect-[4/3]">
+      <div className="w-[85%] aspect-[4/3] z-10">
         <img
           src="/images/Flag_of_Turkey.svg.webp"
           alt="Flag of Turkey"
