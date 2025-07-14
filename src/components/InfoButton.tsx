@@ -16,12 +16,13 @@ export default function InfoButton({
     <NavLink
       to={path}
       end
+      aria-label={label + " Button"}
       className={({ isActive }) => {
         // Base styles for the button
         const base =
           "flex items-center gap-2 justify-center " +
           "lg:flex-col xl:flex-row " +
-          "border border-white/20 rounded-md " +
+          "border border-white/20 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 " +
           "px-4 py-2 " +
           "text-[3.5vw] lg:text-[1.2vw] xl:text-[0.9vw] " +
           "min-w-[80px] lg:min-w-[6vw] xl:min-w-[6vw] " +
