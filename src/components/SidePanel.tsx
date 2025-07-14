@@ -49,7 +49,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         />
       </span>
       {/* This panel is not visible below lg */}
-      <div className="text-[2.5vw] md:text-[5vw] lg:text-[3.8vw] xl:text-[3vw] font-bold z-10">
+      <div className="text-[2.5vw] md:text-[5vw] lg:text-[3.8vw] xl:text-[3vw] font-bold font-orbitron z-10">
         <div
           style={{
             transform: mirrored ? "skewY(-3deg)" : "skewY(3deg)",

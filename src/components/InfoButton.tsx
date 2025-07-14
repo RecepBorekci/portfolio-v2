@@ -36,7 +36,7 @@ export default function InfoButton({
       }}
     >
       <Icon />
-      <span className="font-inter">{label}</span>
+      <span className="font-bold tracking-wide">{label}</span>
     </NavLink>
   );
 }

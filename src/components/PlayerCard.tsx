@@ -40,7 +40,7 @@ export default function PlayerCard({ size = "full" }: PlayerCardProps) {
 
         <div className="h-[4%] flex items-center justify-center">
           <h2
-            className={`text-[#7B4019] font-bold font-inter ${
+            className={`text-[#7B4019] font-bold font-orbitron ${
               isMini
                 ? "text-[0.8em] sm:text-[1em] md:text-[1em] lg:text-[1em] xl:text-[1.1em]"
                 : "text-[1.3em] sm:text-[1.5em] md:text-[1.05em] lg:text-[1.2em] xl:text-[1.3em]"
@@ -59,7 +59,10 @@ export default function PlayerCard({ size = "full" }: PlayerCardProps) {
           }`}
         >
           {stats.map((item) => (
-            <div key={item.id} className="flex flex-col items-center">
+            <div
+              key={item.id}
+              className="flex flex-col items-center font-orbitron"
+            >
               <span className="font-medium text-gray-600 text-[1.2em]">
                 {item.label}
               </span>
