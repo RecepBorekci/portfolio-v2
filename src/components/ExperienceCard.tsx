@@ -12,7 +12,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
       <div className="flex items-center justify-center">
         <img
           src={experience.logo}
-          className="max-h-[100px] xl:max-h-[160px] object-contain"
+          className="h-50 max-h-[100px] md:max-h-[120px] xl:max-h-[160px] w-50 max-w-[160px] md:max-w-[120px] xl:max-w-[160px] object-cover"
           alt={`${experience.company} logo`}
         />
       </div>
@@ -38,11 +38,10 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
           to={`/season/${experience.company
             .toLowerCase()
             .replace(/\s+/g, "-")}`}
-          className="w-fit"
+          className="w-fit inline-flex items-center gap-2 px-4 py-2 mt-2 text-sm font-medium rounded-md text-yellow-300 bg-white/5 hover:bg-white/15 hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/80 transition-all duration-200 ease-in-out"
+          aria-label={`View more about ${experience.company}`}
         >
-          <span className="mt-2 text-sm text-yellow-300 hover:underline">
-            View More →
-          </span>
+          View More →
         </Link>
       </div>
     </div>

@@ -83,7 +83,7 @@ function ExperienceDetailPage() {
             <img
               src={experience.logo}
               alt={`${experience.company} logo`}
-              className="w-30 h-30 object-contain rounded-2xl border border-white/20 me-4 lg:me-10"
+              className="w-30 h-30 object-cover rounded-2xl border border-white/20 me-4 lg:me-10"
             />
             <div className="flex flex-col justify-center gap-1">
               <h1 className="text-2xl md:text-3xl font-bold">

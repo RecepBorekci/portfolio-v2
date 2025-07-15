@@ -69,10 +69,10 @@ const StatsPage: React.FC = () => {
     <main className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-2xl border border-gray-600/20 rounded-xl w-full max-w-7xl mx-auto p-8">
         <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">
+          <h1 className="text-4xl font-bold text-white mb-2 font-orbitron">
             Professional Skills Overview
           </h1>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-lg font-orbitron">
             Technical expertise and competencies presented in player stats
             format
           </p>
