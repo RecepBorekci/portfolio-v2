@@ -143,6 +143,9 @@ export const portfolioData: {
         "Improved debugging and problem-solving skills by resolving frontend issues and performance bottlenecks.",
         "Worked closely with backend developers to integrate REST APIs, ensuring smooth UX and data flow.",
       ],
+      slug: "butiko",
+      logoAlt: "ButikO Logo",
+      ariaLabel: "View more about ButikO",
     },
     {
       id: 1,
@@ -166,6 +169,9 @@ export const portfolioData: {
         "Built my first portfolio project with React.js from scratch, deploying it live to production.",
         "Gained hands-on experience with component-based architecture and responsive UI design using Bootstrap and MUI.",
       ],
+      slug: "orta-anadolu",
+      logoAlt: "Orta Anadolu Logo",
+      ariaLabel: "View more about Orta Anadolu",
     },
     {
       id: 2,
@@ -192,6 +198,9 @@ export const portfolioData: {
         "Used tools like HPE iLO, Smart Update Manager, and Nessus for server monitoring and patching.",
         "Practiced troubleshooting and diagnostics with Event Viewer, Performance Monitor, and Microsoft SQL Clustering.",
       ],
+      slug: "turkcell",
+      logoAlt: "Turkcell Logo",
+      ariaLabel: "View more about Turkcell",
     },
     {
       id: 3,
@@ -221,6 +230,9 @@ export const portfolioData: {
         "Built an arbitrage pricing engine using OpenAI function calling, real-time logic, and SQL views.",
         "Gained experience in Dockerized deployment and AWS-hosted infrastructure for LLM tooling.",
       ],
+      slug: "kaymet",
+      logoAlt: "Kaymet Logo",
+      ariaLabel: "View more about Kaymet",
     },
   ],
   statsPageData: [

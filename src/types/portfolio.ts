@@ -43,6 +43,9 @@ export interface Experience {
   logo: string;
   tags: string[];
   whatILearned: string[];
+  slug: string;
+  logoAlt: string;
+  ariaLabel: string;
 }
 
 export interface StatCategory {

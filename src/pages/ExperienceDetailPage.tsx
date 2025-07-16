@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { portfolioData } from "../data/portfolio";
 import { Experience } from "../types/portfolio";
 import { FaArrowLeft } from "react-icons/fa6";
+import TagPill from "../components/TagPill";
 
 type Params = {
   slug: string;
@@ -12,7 +13,7 @@ function ExperienceDetailPage() {
   const seasonData = portfolioData.seasonPageData;
 
   const experience: Experience | undefined = seasonData.find(
-    (exp) => exp.company.toLowerCase().replace(/\s+/g, "-") === slug
+    (exp) => exp.slug === slug
   );
 
   if (!experience) {
@@ -82,7 +83,7 @@ function ExperienceDetailPage() {
           <div className="grid grid-cols-[auto_1fr] items-center gap-6">
             <img
               src={experience.logo}
-              alt={`${experience.company} logo`}
+              alt={experience.logoAlt}
               className="w-30 h-30 object-cover rounded-2xl border border-white/20 me-4 lg:me-10"
             />
             <div className="flex flex-col justify-center gap-1">
@@ -117,12 +118,7 @@ function ExperienceDetailPage() {
           <h1 className="text-xl md:text-2xl font-bold">Tags</h1>
           <div className="flex flex-wrap gap-2">
             {experience.tags.map((tag) => (
-              <span
-                key={tag}
-                className="bg-yellow-400/20 text-yellow-300 px-2 py-1 text-xs md:text-sm rounded-full"
-              >
-                {tag}
-              </span>
+              <TagPill key={tag} tag={tag} mdTextSm />
             ))}
           </div>
         </div>
