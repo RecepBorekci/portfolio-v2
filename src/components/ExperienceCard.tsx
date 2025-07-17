@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import { Experience } from "../types/portfolio";
+import ViewMoreLink from "./ViewMoreLink";
+import TagPill from "./TagPill";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -13,7 +14,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         <img
           src={experience.logo}
           className="h-50 max-h-[100px] md:max-h-[120px] xl:max-h-[160px] w-50 max-w-[160px] md:max-w-[120px] xl:max-w-[160px] object-cover"
-          alt={`${experience.company} logo`}
+          alt={experience.logoAlt}
         />
       </div>
 
@@ -26,23 +27,10 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         </p>
         <div className="flex flex-wrap gap-2 mt-1">
           {experience.tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-yellow-400/20 text-yellow-300 px-2 py-1 text-xs rounded-full"
-            >
-              {tag}
-            </span>
+            <TagPill key={tag} tag={tag} />
           ))}
         </div>
-        <Link
-          to={`/season/${experience.company
-            .toLowerCase()
-            .replace(/\s+/g, "-")}`}
-          className="w-fit inline-flex items-center gap-2 px-4 py-2 mt-2 text-sm font-medium rounded-md text-yellow-300 bg-white/5 hover:bg-white/15 hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/80 transition-all duration-200 ease-in-out"
-          aria-label={`View more about ${experience.company}`}
-        >
-          View More →
-        </Link>
+        <ViewMoreLink slug={experience.slug} ariaLabel={experience.ariaLabel} />
       </div>
     </div>
   );

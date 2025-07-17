@@ -20,13 +20,14 @@ export interface Language {
 }
 
 export interface Hobby {
-  icon: string;
+  emoji: string;
   label: string;
 }
 
 export interface ProfileData {
   name: string;
   title: string;
+  avatar: string;
   description: string;
   skills: string[];
   languages: Language[];
@@ -43,6 +44,9 @@ export interface Experience {
   logo: string;
   tags: string[];
   whatILearned: string[];
+  slug: string;
+  logoAlt: string;
+  ariaLabel: string;
 }
 
 export interface StatCategory {

@@ -1,12 +1,11 @@
 import React from "react";
 import StatCategoryCard from "../components/StatCategoryCard";
 import StatSubCategoryCard from "../components/StatSubCategoryCard";
-import { portfolioData } from "../data/portfolio";
+import { statsPageData } from "../data/stats";
 import { StatCategory } from "../types/portfolio";
 
 const StatsPage: React.FC = () => {
-  const professionalSkillCategories: StatCategory[] =
-    portfolioData.statsPageData;
+  const professionalSkillCategories: StatCategory[] = statsPageData;
 
   const renderMobileLayout = () => (
     <section
