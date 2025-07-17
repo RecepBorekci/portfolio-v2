@@ -19,7 +19,7 @@ function MainPage() {
 
         {/* Player Card */}
         <div className="flex justify-center ">
-          <PlayerCard />
+          <PlayerCard size="full" />
         </div>
 
         {/* Right Panel */}
@@ -41,7 +41,7 @@ function MainPage() {
         </div>
 
         {/* Player Card - absolutely positioned */}
-        <PlayerCard />
+        <PlayerCard size="full" />
 
         {/* Right Panel - absolutely positioned */}
         <div className="hidden lg:block">

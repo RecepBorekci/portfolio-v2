@@ -15,13 +15,15 @@ import {
 } from "../types/portfolio";
 
 export const portfolioData: {
-  playerCardData: { stats: Stat[] };
+  playerCardData: { name: string; profileImage: string; stats: Stat[] };
   infoMenuData: { buttonData: InfoMenuItem[] };
   profilePageData: ProfileData;
   seasonPageData: Experience[];
   statsPageData: StatCategory[];
 } = {
   playerCardData: {
+    name: "Recep Börekci",
+    profileImage: "/images/profile.jpg",
     stats: [
       {
         id: 0,
