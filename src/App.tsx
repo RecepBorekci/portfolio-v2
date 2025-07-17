@@ -7,6 +7,7 @@ import SeasonPage from "./pages/SeasonPage";
 import StatsPage from "./pages/StatsPage";
 import TeamPage from "./pages/TeamPage";
 import ExperienceDetailPage from "./pages/ExperienceDetailPage";
+import ExperienceNotFoundPage from "./pages/ExperienceNotFoundPage";
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,10 @@ function App() {
           <Route path="/season/:slug" element={<ExperienceDetailPage />} />
           <Route path="/stats" element={<StatsPage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route
+            path="/experience-not-found"
+            element={<ExperienceNotFoundPage />}
+          />
         </Routes>
       </div>
     </div>
