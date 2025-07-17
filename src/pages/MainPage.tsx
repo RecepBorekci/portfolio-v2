@@ -1,6 +1,6 @@
-import Platform from "../components/Platform";
 import PlayerCard from "../components/PlayerCard";
 import SidePanel from "../components/SidePanel";
+import Platform from "../components/Platform.svg?react";
 
 function MainPage() {
   return (
@@ -31,7 +31,9 @@ function MainPage() {
       {/* Container for xl+ screens - new relative positioned container */}
       <div className="hidden xl:block relative w-full max-w-[1678px] h-[800px]">
         {/* Platform positioned at bottom */}
-        <Platform />
+        <div className="w-[80vw] h-full flex justify-center xl:absolute xl:bottom-0 xl:left-1/2 xl:-translate-x-1/2 xl:z-20 xl:w-auto xl:h-auto">
+          <Platform />
+        </div>
 
         {/* Left Panel - absolutely positioned */}
         <div className="hidden lg:block">
