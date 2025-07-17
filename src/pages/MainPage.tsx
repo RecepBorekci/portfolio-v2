@@ -14,7 +14,7 @@ function MainPage() {
       <div className="xl:hidden relative w-full max-w-[1280px] px-4 flex items-center justify-around">
         {/* Left Panel */}
         <div className="hidden md:block self-end">
-          <SidePanel />
+          <SidePanel mirrored={false} />
         </div>
 
         {/* Player Card */}
@@ -24,7 +24,7 @@ function MainPage() {
 
         {/* Right Panel */}
         <div className="hidden md:block self-end">
-          <SidePanel mirrored />
+          <SidePanel mirrored={true} />
         </div>
       </div>
 
@@ -37,7 +37,7 @@ function MainPage() {
 
         {/* Left Panel - absolutely positioned */}
         <div className="hidden lg:block">
-          <SidePanel />
+          <SidePanel mirrored={false} />
         </div>
 
         {/* Player Card - absolutely positioned */}
@@ -45,7 +45,7 @@ function MainPage() {
 
         {/* Right Panel - absolutely positioned */}
         <div className="hidden lg:block">
-          <SidePanel mirrored />
+          <SidePanel mirrored={true} />
         </div>
       </div>
     </div>

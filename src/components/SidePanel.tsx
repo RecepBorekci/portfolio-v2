@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { portfolioData } from "../data/portfolio";
 import { Stat } from "../types/portfolio";
 import LeftSidePanelBackground from "./LeftSidePanelBackground.svg";
@@ -7,11 +8,27 @@ interface SidePanelProps {
   mirrored?: boolean;
 }
 
+// Helper functions to calculate styles based on mirrored prop
+const getClipPath = (mirrored: boolean) =>
+  mirrored
+    ? "polygon(0% 7%, 100% 0, 100% 100%, 0 100%)"
+    : "polygon(0% 0, 100% 7%, 100% 100%, 0 100%)";
+
+const getSkewTransform = (mirrored: boolean, angle: number) => ({
+  transform: mirrored ? `skewY(-${angle}deg)` : `skewY(${angle}deg)`,
+  transformOrigin: "center",
+});
+
+const getSidePanelBackground = (mirrored: boolean) =>
+  mirrored ? RightSidePanelBackground : LeftSidePanelBackground;
+
 export default function SidePanel({ mirrored = false }: SidePanelProps) {
   const stats: Stat[] = portfolioData.playerCardData.stats;
-  const avg = Math.round(
-    stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length
-  );
+  const avg = useMemo(() => {
+    return Math.round(
+      stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length
+    );
+  }, [stats]);
 
   return (
     <div
@@ -32,9 +49,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         ${mirrored ? "xl:right-[10%]" : "xl:left-[10%]"}
       `}
       style={{
-        clipPath: mirrored
-          ? "polygon(0% 7%, 100% 0, 100% 100%, 0 100%)"
-          : "polygon(0% 0, 100% 7%, 100% 100%, 0 100%)",
+        clipPath: getClipPath(mirrored),
       }}
     >
       {/* SVG Background */}
@@ -43,21 +58,14 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         aria-hidden="true"
       >
         <img
-          src={mirrored ? RightSidePanelBackground : LeftSidePanelBackground}
+          src={getSidePanelBackground(mirrored)}
           alt="side panel background"
           className="w-full h-full object-cover"
         />
       </span>
       {/* This panel is not visible below lg */}
       <div className="text-[2.5vw] md:text-[5vw] lg:text-[3.8vw] xl:text-[3vw] font-bold font-orbitron z-10">
-        <div
-          style={{
-            transform: mirrored ? "skewY(-3deg)" : "skewY(3deg)",
-            transformOrigin: "center",
-          }}
-        >
-          {avg}
-        </div>
+        <div style={getSkewTransform(mirrored, 3)}>{avg}</div>
       </div>
 
       <div className="w-[50%] aspect-square rounded-full overflow-hidden z-10">
@@ -65,10 +73,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
           src="/images/AGU.jpg"
           alt="AGU team logo"
           className="w-full h-full object-cover"
-          style={{
-            transform: mirrored ? "skewY(-2deg)" : "skewY(2deg)",
-            transformOrigin: "center",
-          }}
+          style={getSkewTransform(mirrored, 2)}
         />
       </div>
 
@@ -77,10 +82,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
           src="/images/Flag_of_Turkey.svg.webp"
           alt="Flag of Turkey"
           className="w-full h-full object-contain"
-          style={{
-            transform: mirrored ? "skewY(-2deg)" : "skewY(2deg)",
-            transformOrigin: "center",
-          }}
+          style={getSkewTransform(mirrored, 2)}
         />
       </div>
     </div>
