@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { portfolioData } from "../data/portfolio";
+import { playerCardData } from "../data/playerCard";
 import { Stat } from "../types/portfolio";
 import LeftSidePanelBackground from "./LeftSidePanelBackground.svg";
 import RightSidePanelBackground from "./RightSidePanelBackground.svg";
@@ -23,7 +23,7 @@ const getSidePanelBackground = (mirrored: boolean) =>
   mirrored ? RightSidePanelBackground : LeftSidePanelBackground;
 
 export default function SidePanel({ mirrored = false }: SidePanelProps) {
-  const stats: Stat[] = portfolioData.playerCardData.stats;
+  const stats: Stat[] = playerCardData.stats;
   const avg = useMemo(() => {
     return Math.round(
       stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length

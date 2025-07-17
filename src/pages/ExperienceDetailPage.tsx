@@ -1,5 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
-import { portfolioData } from "../data/portfolio";
+import { seasonPageData } from "../data/experiences";
 import { Experience } from "../types/portfolio";
 import ExperiencePageHeader from "../components/ExperiencePageHeader";
 import ExperiencePageDescription from "../components/ExperiencePageDescription";
@@ -13,7 +13,7 @@ type Params = {
 
 function ExperienceDetailPage() {
   const { slug } = useParams<Params>();
-  const seasonData = portfolioData.seasonPageData;
+  const seasonData: Experience[] = seasonPageData;
 
   const experience: Experience | undefined = seasonData.find(
     (exp) => exp.slug === slug

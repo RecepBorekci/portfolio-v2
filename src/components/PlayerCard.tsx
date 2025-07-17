@@ -1,4 +1,4 @@
-import { portfolioData } from "../data/portfolio";
+import { playerCardData } from "../data/playerCard";
 import svg from "./PlayerCardBackground.svg";
 import StatPair from "./StatPair";
 
@@ -26,7 +26,7 @@ const sizeClasses = {
 };
 
 export default function PlayerCard({ size }: PlayerCardProps) {
-  const { name, stats, profileImage } = portfolioData.playerCardData;
+  const { name, stats, profileImage } = playerCardData;
   const classes = sizeClasses[size];
 
   return (

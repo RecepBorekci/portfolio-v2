@@ -20,7 +20,7 @@ export interface Language {
 }
 
 export interface Hobby {
-  icon: string;
+  emoji: string;
   label: string;
 }
 

@@ -65,7 +65,7 @@ export default function ProfileAttributeList({
               // Only Hobby objects should be processed here
               if (
                 typeof item !== "object" ||
-                !("icon" in item) ||
+                !("emoji" in item) ||
                 !("label" in item)
               )
                 return null;
@@ -75,7 +75,7 @@ export default function ProfileAttributeList({
                   key={i}
                   className="bg-white/10 px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2"
                 >
-                  <span>{hobbyItem.icon}</span> {hobbyItem.label}
+                  <span>{hobbyItem.emoji}</span> {hobbyItem.label}
                 </div>
               );
             })}

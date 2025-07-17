@@ -1,6 +1,6 @@
 import ProfileAttributeList from "../components/ProfileAttributeList";
 import PlayerCard from "../components/PlayerCard";
-import { portfolioData } from "../data/portfolio";
+import { profilePageData } from "../data/profile";
 import { ProfileData } from "../types/portfolio";
 
 function ProfilePage() {
@@ -12,7 +12,7 @@ function ProfilePage() {
     skills,
     languages,
     hobbies,
-  }: ProfileData = portfolioData.profilePageData;
+  }: ProfileData = profilePageData;
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">

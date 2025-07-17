@@ -1,10 +1,10 @@
 import InfoButton from "./InfoButton";
 import { InfoMenuItem } from "../types/portfolio";
-import { portfolioData } from "../data/portfolio";
+import { infoMenuData } from "../data/infoMenu";
 import clsx from "clsx";
 
 export default function InfoMenu() {
-  const buttonData: InfoMenuItem[] = portfolioData.infoMenuData.buttonData;
+  const buttonData: InfoMenuItem[] = infoMenuData.buttonData;
 
   // Helper function to render buttons in a container
   function renderButtons({
