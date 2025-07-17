@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import ProfilePage from "./pages/ProfilePage";
 import SeasonPage from "./pages/SeasonPage";
 import StatsPage from "./pages/StatsPage";
-import TeamPage from "./pages/TeamPage";
 import ExperienceDetailPage from "./pages/ExperienceDetailPage";
 import ExperienceNotFoundPage from "./pages/ExperienceNotFoundPage";
 
@@ -35,7 +34,6 @@ function App() {
           <Route path="/season" element={<SeasonPage />} />
           <Route path="/season/:slug" element={<ExperienceDetailPage />} />
           <Route path="/stats" element={<StatsPage />} />
-          <Route path="/team" element={<TeamPage />} />
           <Route
             path="/experience-not-found"
             element={<ExperienceNotFoundPage />}
