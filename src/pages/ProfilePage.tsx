@@ -21,7 +21,7 @@ function ProfilePage() {
         <div className="col-span-1 flex justify-center items-center">
           <img
             src={avatar}
-            alt="Cartoon Avatar"
+            alt={`${name} avatar`}
             className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] object-contain"
           />
         </div>
