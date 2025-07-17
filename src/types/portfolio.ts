@@ -27,6 +27,7 @@ export interface Hobby {
 export interface ProfileData {
   name: string;
   title: string;
+  avatar: string;
   description: string;
   skills: string[];
   languages: Language[];

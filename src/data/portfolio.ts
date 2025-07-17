@@ -83,6 +83,7 @@ export const portfolioData: {
   profilePageData: {
     name: "Recep Börekci",
     title: "LLM Developer / Frontend Developer",
+    avatar: "/images/MyAvatar.png",
     description:
       "Recent Computer Science graduate with a strong passion for frontend and AI development. Experienced in building responsive, scalable React.js interfaces and production-ready LLM APIs. Interned in both startup and enterprise settings, contributing to fast, usable, and efficient systems across web and AI projects.",
     skills: [

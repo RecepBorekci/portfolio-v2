@@ -1,20 +1,26 @@
+import ProfileAttributeList from "../components/ProfileAttributeList";
 import PlayerCard from "../components/PlayerCard";
 import { portfolioData } from "../data/portfolio";
 import { ProfileData } from "../types/portfolio";
 
-const MyAvatar = "/images/MyAvatar.png";
-
 function ProfilePage() {
-  const { name, title, description, skills, languages, hobbies }: ProfileData =
-    portfolioData.profilePageData;
+  const {
+    name,
+    title,
+    avatar,
+    description,
+    skills,
+    languages,
+    hobbies,
+  }: ProfileData = portfolioData.profilePageData;
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">
+    <main className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">
       <div className="bg-gradient-to-br from-black/60 via-gray-900/60 to-yellow-900/30 shadow-2xl border border-yellow-400/10 rounded-xl shadow-xl w-full container mx-auto  p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 ">
         {/* Left - Avatar */}
         <div className="col-span-1 flex justify-center items-center">
           <img
-            src={MyAvatar}
+            src={avatar}
             alt="Cartoon Avatar"
             className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] object-contain"
           />
@@ -41,60 +47,21 @@ function ProfilePage() {
 
           {/* Bottom Row - Skills / Languages / Hobbies */}
           <div className="flex flex-col md:grid grid-cols-3 gap-8 text-base">
-            {/* Skills */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2 border-b border-white/20 pb-1">
-                Skills
-              </h3>
-              <div className="flex flex-wrap gap-2 overflow-y-auto pr-1">
-                {skills?.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="bg-yellow-400/20 border border-yellow-400 text-yellow-300 px-2 py-1 text-xs rounded-full font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Languages */}
-            <div>
-              <h3 className="text-xl font-semibold mb-2 border-b border-white/20 pb-1">
-                Languages
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {languages?.map(({ label, bg }, i) => (
-                  <div
-                    key={i}
-                    className={`px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2 ${bg}`}
-                  >
-                    {label}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hobbies */}
-            <div>
-              <h3 className="text-xl  font-semibold mb-2 border-b border-white/20 pb-1">
-                Hobbies
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {hobbies?.map(({ icon, label }, i) => (
-                  <div
-                    key={i}
-                    className="bg-white/10 px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2"
-                  >
-                    <span>{icon}</span> {label}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ProfileAttributeList title="Skills" items={skills} type="skills" />
+            <ProfileAttributeList
+              title="Languages"
+              items={languages}
+              type="languages"
+            />
+            <ProfileAttributeList
+              title="Hobbies"
+              items={hobbies}
+              type="hobbies"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
