@@ -83,12 +83,3 @@ export const getSubCategoryConfig = (size: "small" | "large") => {
     size.toUpperCase() as keyof typeof COMPONENT_SIZES.SUB_CATEGORY
   ];
 };
-
-/**
- * Animation constants for consistent transitions
- */
-export const ANIMATIONS = {
-  PROGRESS_TRANSITION: "transition-all duration-500 ease-out",
-  HOVER_TRANSITION: "transition-all duration-200",
-  STROKE_TRANSITION: "stroke-dasharray 0.5s ease-in-out",
-} as const;

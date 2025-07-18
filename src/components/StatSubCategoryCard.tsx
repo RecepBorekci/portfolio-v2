@@ -1,18 +1,21 @@
 import React from "react";
+import { motion } from "motion/react";
 import { StatSubCategory } from "../types/portfolio";
 import {
   getStatColorByValue,
   getSubCategoryConfig,
-  ANIMATIONS,
 } from "../constants/statThemes";
+import { CATEGORY_CARD_ANIMATION } from "../constants/animation";
+import AnimatedNumber from "./AnimatedNumber";
 
 interface StatSubCategoryCardProps {
   substatistic: StatSubCategory;
   displaySize: "small" | "large";
+  delay?: number;
 }
 
 const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
-  ({ substatistic, displaySize }) => {
+  ({ substatistic, displaySize, delay = 0 }) => {
     const config = getSubCategoryConfig(displaySize);
     const currentColor = getStatColorByValue(substatistic.value);
     const progressPercentage = `${substatistic.value}%`;
@@ -26,11 +29,15 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
         aria-valuemax={100}
         aria-label={`${substatistic.label} skill level`}
       >
-        <div
-          className={`${config.progressBar.bar} rounded ${ANIMATIONS.PROGRESS_TRANSITION}`}
-          style={{
-            width: progressPercentage,
-            backgroundColor: currentColor,
+        <motion.div
+          className={`${config.progressBar.bar} rounded`}
+          style={{ backgroundColor: currentColor }}
+          initial={{ width: "0%" }}
+          animate={{ width: progressPercentage }}
+          transition={{
+            duration: CATEGORY_CARD_ANIMATION.DURATION.PROGRESS,
+            delay: delay,
+            ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
           }}
         />
       </div>
@@ -41,23 +48,31 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
         <span className={`${config.label} truncate font-medium`}>
           {substatistic.label}
         </span>
-        <span
+        <AnimatedNumber
+          value={substatistic.value}
+          duration={CATEGORY_CARD_ANIMATION.DURATION.PROGRESS}
+          delay={delay}
           className={`font-bold ${config.value} tabular-nums`}
           style={{ color: currentColor }}
-          aria-label={`Score: ${substatistic.value} out of 100`}
-        >
-          {substatistic.value}
-        </span>
+          aria-hidden={false}
+        />
       </div>
     );
 
     return (
-      <article
-        className={`bg-gray-700/50 rounded-lg px-3 ${config.container} ${ANIMATIONS.HOVER_TRANSITION} hover:bg-gray-700/70`}
+      <motion.article
+        className={`bg-gray-700/50 rounded-lg px-3 ${config.container} hover:bg-gray-700/70`}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: CATEGORY_CARD_ANIMATION.DURATION.FADE,
+          delay: delay,
+          ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
+        }}
       >
         {renderStatHeader()}
         {renderProgressBar()}
-      </article>
+      </motion.article>
     );
   }
 );
