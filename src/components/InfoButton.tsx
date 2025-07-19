@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { IconType } from "react-icons";
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useMemo } from "react";
 
 interface InfoButtonProps {

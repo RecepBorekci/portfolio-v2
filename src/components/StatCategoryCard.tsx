@@ -1,12 +1,15 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { StatCategory } from "../types/portfolio";
 import {
   getStatColorByValue,
   getCategoryConfig,
 } from "../constants/statThemes";
-import { CATEGORY_CARD_ANIMATION } from "../constants/animation";
 import AnimatedNumber from "./AnimatedNumber";
+import {
+  statCategoryAnimations,
+  STATS_ANIMATION,
+} from "../animation/statsPage";
 
 interface StatCategoryCardProps {
   category: StatCategory;
@@ -44,13 +47,11 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
               fill="transparent"
               strokeLinecap="round"
               d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              initial={{ strokeDasharray: "0, 100" }}
-              animate={{ strokeDasharray: `${category.value}, 100` }}
-              transition={{
-                duration: CATEGORY_CARD_ANIMATION.DURATION.PROGRESS,
-                delay: delay,
-                ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
-              }}
+              initial={statCategoryAnimations.progressCircle.initial}
+              animate={statCategoryAnimations.progressCircle.animate(
+                category.value,
+                delay
+              )}
             />
           </svg>
 
@@ -58,7 +59,7 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
           <div className="absolute inset-0 flex items-center justify-center">
             <AnimatedNumber
               value={category.value}
-              duration={CATEGORY_CARD_ANIMATION.DURATION.PROGRESS}
+              duration={STATS_ANIMATION.DURATION.PROGRESS}
               delay={delay}
               className={`${config.value} font-bold`}
               style={{ color: currentColor }}
@@ -84,13 +85,8 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
           text-center 
           ${config.container}
         `}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: CATEGORY_CARD_ANIMATION.DURATION.FADE,
-          delay: delay,
-          ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
-        }}
+        initial={statCategoryAnimations.initial}
+        animate={statCategoryAnimations.animate(delay)}
       >
         {renderCircularProgress()}
 

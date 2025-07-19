@@ -3,7 +3,8 @@ import { playerCardData } from "../data/playerCard";
 import { Stat } from "../types/portfolio";
 import LeftSidePanelBackground from "./LeftSidePanelBackground.svg";
 import RightSidePanelBackground from "./RightSidePanelBackground.svg";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { sidePanelAnimations } from "../animation/mainPage";
 
 interface SidePanelProps {
   mirrored?: boolean;
@@ -52,15 +53,8 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
       style={{
         clipPath: getClipPath(mirrored),
       }}
-      whileHover={{
-        y: -3,
-        scale: 1.01,
-        boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-        transition: { type: "spring", stiffness: 300, damping: 15 },
-      }}
-      whileTap={{
-        scale: 0.99,
-      }}
+      whileHover={sidePanelAnimations.hover}
+      whileTap={sidePanelAnimations.tap}
     >
       {/* SVG Background */}
       <span

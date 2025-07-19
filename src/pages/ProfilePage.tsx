@@ -3,6 +3,12 @@ import PlayerCard from "../components/PlayerCard";
 import { profilePageData } from "../data/profile";
 import { ProfileData } from "../types/portfolio";
 import { motion } from "motion/react";
+import {
+  profileContainerAnimation,
+  profileImageAnimation,
+  playerCardAnimation,
+  profileContentAnimation,
+} from "../animation/profilePage";
 
 function ProfilePage() {
   const {
@@ -18,32 +24,20 @@ function ProfilePage() {
   return (
     <main className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={profileContainerAnimation.initial}
+        animate={profileContainerAnimation.animate}
+        transition={profileContainerAnimation.transition}
         className="bg-gradient-to-br from-black/60 via-gray-900/60 to-yellow-900/30 shadow-2xl border border-yellow-400/10 rounded-xl shadow-xl w-full container mx-auto p-10 grid grid-cols-1 lg:grid-cols-3 gap-8"
       >
         {/* Left - Avatar */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.2,
-            type: "spring",
-            stiffness: 200,
-          }}
+          initial={profileImageAnimation.initial}
+          animate={profileImageAnimation.animate}
+          transition={profileImageAnimation.transition}
           className="col-span-1 flex justify-center items-center"
         >
           <motion.img
-            whileHover={{
-              scale: 1.03,
-              y: -5,
-              transition: {
-                duration: 0.4,
-                ease: "easeOut",
-              },
-            }}
+            whileHover={profileImageAnimation.hover}
             src={avatar}
             alt={`${name} avatar`}
             className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] object-contain"
@@ -65,21 +59,17 @@ function ProfilePage() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
             <div className="hidden lg:inline md:col-span-2">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                initial={playerCardAnimation.initial}
+                animate={playerCardAnimation.animate}
+                transition={playerCardAnimation.transition}
               >
                 <PlayerCard size="mini" />
               </motion.div>
             </div>
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.4,
-                ease: "easeOut",
-              }}
+              initial={profileContentAnimation.initial}
+              animate={profileContentAnimation.animate}
+              transition={profileContentAnimation.transition}
               className="col-span-5 lg:col-span-3 flex flex-col gap-2 justify-center px-4"
             >
               <h1 className="text-4xl font-bold">{name}</h1>

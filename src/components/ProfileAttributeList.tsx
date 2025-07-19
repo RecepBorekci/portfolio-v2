@@ -1,5 +1,9 @@
 import { Language, Hobby } from "../types/portfolio";
 import { motion } from "motion/react";
+import {
+  attributeItemAnimation,
+  attributeListAnimation,
+} from "../animation/profilePage";
 
 // Generic type that accepts either strings, Language objects, or Hobby objects
 type AttributeItem = string | Language | Hobby;
@@ -27,12 +31,8 @@ export default function ProfileAttributeList({
               if (typeof item !== "string") return null;
               return (
                 <motion.span
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0.1 + index * 0.1 + i * 0.03,
-                  }}
+                  initial={attributeItemAnimation.initial}
+                  animate={attributeItemAnimation.animate(index, i)}
                   key={i}
                   className="bg-yellow-400/20 border border-yellow-400 text-yellow-300 px-2 py-1 text-xs rounded-full font-medium"
                 >
@@ -57,12 +57,8 @@ export default function ProfileAttributeList({
               const langItem = item as Language;
               return (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0.1 + index * 0.1 + i * 0.03,
-                  }}
+                  initial={attributeItemAnimation.initial}
+                  animate={attributeItemAnimation.animate(index, i)}
                   key={i}
                   className={`px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2 ${langItem.bg}`}
                 >
@@ -87,12 +83,8 @@ export default function ProfileAttributeList({
               const hobbyItem = item as Hobby;
               return (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0.1 + index * 0.1 + i * 0.03,
-                  }}
+                  initial={attributeItemAnimation.initial}
+                  animate={attributeItemAnimation.animate(index, i)}
                   key={i}
                   className="bg-white/10 px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2"
                 >
@@ -110,13 +102,8 @@ export default function ProfileAttributeList({
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: 0.2 + index * 0.1,
-        ease: "easeOut",
-      }}
+      initial={attributeListAnimation.initial}
+      animate={attributeListAnimation.animate(index)}
     >
       <h3 className="text-xl font-semibold mb-2 border-b border-white/20 pb-1">
         {title}

@@ -1,12 +1,15 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { StatSubCategory } from "../types/portfolio";
 import {
   getStatColorByValue,
   getSubCategoryConfig,
 } from "../constants/statThemes";
-import { CATEGORY_CARD_ANIMATION } from "../constants/animation";
 import AnimatedNumber from "./AnimatedNumber";
+import {
+  statSubCategoryAnimations,
+  STATS_ANIMATION,
+} from "../animation/statsPage";
 
 interface StatSubCategoryCardProps {
   substatistic: StatSubCategory;
@@ -32,13 +35,11 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
         <motion.div
           className={`${config.progressBar.bar} rounded`}
           style={{ backgroundColor: currentColor }}
-          initial={{ width: "0%" }}
-          animate={{ width: progressPercentage }}
-          transition={{
-            duration: CATEGORY_CARD_ANIMATION.DURATION.PROGRESS,
-            delay: delay,
-            ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
-          }}
+          initial={statSubCategoryAnimations.progressBar.initial}
+          animate={statSubCategoryAnimations.progressBar.animate(
+            progressPercentage,
+            delay
+          )}
         />
       </div>
     );
@@ -50,7 +51,7 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
         </span>
         <AnimatedNumber
           value={substatistic.value}
-          duration={CATEGORY_CARD_ANIMATION.DURATION.PROGRESS}
+          duration={STATS_ANIMATION.DURATION.PROGRESS}
           delay={delay}
           className={`font-bold ${config.value} tabular-nums`}
           style={{ color: currentColor }}
@@ -70,13 +71,8 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
           px-3 
           ${config.container}
         `}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{
-          duration: CATEGORY_CARD_ANIMATION.DURATION.FADE,
-          delay: delay,
-          ease: CATEGORY_CARD_ANIMATION.EASING.OUT,
-        }}
+        initial={statSubCategoryAnimations.initial}
+        animate={statSubCategoryAnimations.animate(delay)}
       >
         {renderStatHeader()}
         {renderProgressBar()}

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useLocation } from "react-router-dom";
-import { variants } from "../animation/pageTransition";
+import { pageTransitionVariants } from "../animation/common";
 
 interface AnimatedRouteWrapperProps {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export default function AnimatedRouteWrapper({
       <motion.div
         key={location.pathname}
         custom={direction}
-        variants={variants}
+        variants={pageTransitionVariants}
         initial="enter"
         animate="center"
         exit="exit"

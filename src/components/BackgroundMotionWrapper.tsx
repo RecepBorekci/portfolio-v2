@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import BackgroundImage from "./BackgroundImage";
+import { backgroundAnimations } from "../animation/mainPage";
 
 export default function BackgroundMotionWrapper({
   isMainPage,
@@ -10,20 +11,8 @@ export default function BackgroundMotionWrapper({
     <motion.div
       initial={false}
       animate={isMainPage ? "main" : "other"}
-      variants={{
-        main: {
-          filter: "blur(0px) brightness(1)",
-          backgroundColor: "rgba(0,0,0,0)",
-        },
-        other: {
-          filter: "blur(8px) brightness(0.5)",
-          backgroundColor: "rgba(0,0,0,0.3)",
-        },
-      }}
-      transition={{
-        filter: { duration: 0.5 },
-        backgroundColor: { duration: 0.5 },
-      }}
+      variants={backgroundAnimations.variants}
+      transition={backgroundAnimations.transition}
       style={{
         position: "absolute",
         top: 0,

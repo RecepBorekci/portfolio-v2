@@ -1,17 +1,8 @@
-import { Easing } from "motion";
+// This file is deprecated and will be removed.
+// Please use the animations from the src/animation folder instead.
+// For example:
+// - import { DURATIONS, EASINGS } from "../animation/common";
+// - import { STATS_ANIMATION } from "../animation/statsPage";
 
-export const CATEGORY_CARD_ANIMATION = {
-  DURATION: {
-    PROGRESS: 1.5,
-    FADE: 0.6,
-  },
-  EASING: {
-    OUT: "easeOut" as Easing,
-  },
-  STAGGER: {
-    CATEGORY: 0.2,
-    SUBCATEGORY: 0.1,
-    MOBILE_CATEGORY: 0.1,
-    MOBILE_SUBCATEGORY: 0.15,
-  },
-};
+// Re-export from new location for backward compatibility
+export { STATS_ANIMATION as CATEGORY_CARD_ANIMATION } from "../animation/statsPage";

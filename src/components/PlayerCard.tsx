@@ -1,7 +1,8 @@
 import { playerCardData } from "../data/playerCard";
 import svg from "./PlayerCardBackground.svg";
 import StatPair from "./StatPair";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { playerCardAnimations } from "../animation/mainPage";
 
 interface PlayerCardProps {
   size: "full" | "mini";
@@ -33,15 +34,8 @@ export default function PlayerCard({ size }: PlayerCardProps) {
   return (
     <motion.div
       className={`relative aspect-[384/681] ${classes.container}`}
-      whileHover={{
-        y: -5,
-        scale: 1.02,
-        transition: { type: "spring", stiffness: 400, damping: 10 },
-      }}
-      whileTap={{
-        scale: 1,
-        boxShadow: "0 5px 10px rgba(0,0,0,0.1)",
-      }}
+      whileHover={playerCardAnimations.hover}
+      whileTap={playerCardAnimations.tap}
     >
       <img
         src={svg}

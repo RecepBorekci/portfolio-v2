@@ -4,7 +4,7 @@ import AnimatedRouteWrapper from "./components/AnimatedRouteWrapper";
 import BackgroundMotionWrapper from "./components/BackgroundMotionWrapper";
 import { routes } from "./routes";
 import { useRef, useState, useEffect } from "react";
-import { routeIndexMap } from "./animation/pageTransition";
+import { routeIndexMap } from "./animation/common";
 
 function App() {
   const location = useLocation();
