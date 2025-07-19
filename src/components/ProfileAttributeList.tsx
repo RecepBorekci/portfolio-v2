@@ -1,4 +1,5 @@
 import { Language, Hobby } from "../types/portfolio";
+import { motion } from "motion/react";
 
 // Generic type that accepts either strings, Language objects, or Hobby objects
 type AttributeItem = string | Language | Hobby;
@@ -7,28 +8,36 @@ interface ProfileAttributeListProps {
   title: string;
   items: AttributeItem[];
   type: "skills" | "languages" | "hobbies";
+  index?: number;
 }
 
 export default function ProfileAttributeList({
   title,
   items,
   type,
+  index = 0,
 }: ProfileAttributeListProps) {
   const renderItems = () => {
     switch (type) {
       case "skills":
         return (
-          <div className="flex flex-wrap gap-2 overflow-y-auto pr-1">
+          <div className="flex flex-wrap gap-2 pr-1">
             {items.map((item, i) => {
               // Only string items should be processed here
               if (typeof item !== "string") return null;
               return (
-                <span
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.1 + index * 0.1 + i * 0.03,
+                  }}
                   key={i}
                   className="bg-yellow-400/20 border border-yellow-400 text-yellow-300 px-2 py-1 text-xs rounded-full font-medium"
                 >
                   {item}
-                </span>
+                </motion.span>
               );
             })}
           </div>
@@ -47,12 +56,18 @@ export default function ProfileAttributeList({
                 return null;
               const langItem = item as Language;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.1 + index * 0.1 + i * 0.03,
+                  }}
                   key={i}
                   className={`px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2 ${langItem.bg}`}
                 >
                   {langItem.label}
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -71,12 +86,18 @@ export default function ProfileAttributeList({
                 return null;
               const hobbyItem = item as Hobby;
               return (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.1 + index * 0.1 + i * 0.03,
+                  }}
                   key={i}
                   className="bg-white/10 px-3 py-2 rounded-lg text-sm text-white flex items-center gap-2"
                 >
                   <span>{hobbyItem.emoji}</span> {hobbyItem.label}
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -88,11 +109,19 @@ export default function ProfileAttributeList({
   };
 
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.2 + index * 0.1,
+        ease: "easeOut",
+      }}
+    >
       <h3 className="text-xl font-semibold mb-2 border-b border-white/20 pb-1">
         {title}
       </h3>
       {renderItems()}
-    </section>
+    </motion.section>
   );
 }

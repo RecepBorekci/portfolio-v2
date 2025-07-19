@@ -1,14 +1,39 @@
 import { Experience } from "../types/portfolio";
 import ViewMoreLink from "./ViewMoreLink";
 import TagPill from "./TagPill";
+import { motion } from "motion/react";
 
 interface ExperienceCardProps {
   experience: Experience;
+  index?: number;
 }
 
-function ExperienceCard({ experience }: ExperienceCardProps) {
+function ExperienceCard({ experience, index = 0 }: ExperienceCardProps) {
   return (
-    <div className="bg-blue-900/45 rounded-3xl p-4 shadow-lg grid grid-cols-2 items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[280px] hover:scale-[1.01] hover:shadow-2xl">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          delay: index * 0.1,
+          ease: "easeOut",
+        },
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{
+        scale: 1.02,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.25)",
+        borderColor: "rgba(234, 179, 8, 0.3)",
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      }}
+      className="bg-blue-900/45 rounded-3xl p-4 shadow-lg grid grid-cols-2 items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[280px] border border-transparent"
+    >
       {/* Left - Logo */}
       <div className="flex items-center justify-center">
         <img
@@ -32,7 +57,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
         <ViewMoreLink slug={experience.slug} ariaLabel={experience.ariaLabel} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
