@@ -9,6 +9,7 @@ This folder contains the animation configurations for the portfolio site, organi
 - `mainPage.ts` - Animations for main page components (PlayerCard, SidePanel, Background)
 - `profilePage.ts` - Animations for profile page components
 - `seasonPage.ts` - Animations for season page and experience cards
+- `experienceDetailPage.ts` - Animations for experience detail page components
 - `statsPage.ts` - Animations for stats page components and animated numbers
 - `ui.ts` - Animations for UI components used across multiple pages
 
@@ -27,6 +28,7 @@ import { fadeIn, playerCardAnimations } from "../animation";
 ### Apply animations to components
 
 ```tsx
+// Simple animation
 <motion.div
   initial={fadeIn.initial}
   animate={fadeIn.animate}
@@ -34,6 +36,11 @@ import { fadeIn, playerCardAnimations } from "../animation";
   whileTap={playerCardAnimations.tap}
 >
   {/* Component content */}
+</motion.div>
+
+// Using predefined animation objects
+<motion.div {...experienceDetailAnimations.header}>
+  <ExperiencePageHeader experience={experience} />
 </motion.div>
 ```
 
