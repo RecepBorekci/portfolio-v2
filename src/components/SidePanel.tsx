@@ -3,6 +3,7 @@ import { playerCardData } from "../data/playerCard";
 import { Stat } from "../types/portfolio";
 import LeftSidePanelBackground from "./LeftSidePanelBackground.svg";
 import RightSidePanelBackground from "./RightSidePanelBackground.svg";
+import { motion } from "framer-motion";
 
 interface SidePanelProps {
   mirrored?: boolean;
@@ -31,7 +32,7 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
   }, [stats]);
 
   return (
-    <div
+    <motion.div
       className={`
         relative 
         aspect-[2/4] 
@@ -50,6 +51,15 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
       `}
       style={{
         clipPath: getClipPath(mirrored),
+      }}
+      whileHover={{
+        y: -3,
+        scale: 1.01,
+        boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+        transition: { type: "spring", stiffness: 300, damping: 15 },
+      }}
+      whileTap={{
+        scale: 0.99,
       }}
     >
       {/* SVG Background */}
@@ -85,6 +95,6 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
           style={getSkewTransform(mirrored, 2)}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

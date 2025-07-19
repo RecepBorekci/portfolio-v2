@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { StatCategory } from "../types/portfolio";
 import {
   getStatColorByValue,
@@ -71,7 +71,19 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
 
     return (
       <motion.article
-        className={`bg-gray-800/80 border border-gray-600/30 rounded-lg p-4 text-center ${config.container}`}
+        className={`
+          bg-gray-800/80 
+          border 
+          border-gray-600/30 
+          hover:bg-gray-700/60
+          hover:border-gray-500/40
+          transition-colors
+          duration-0
+          rounded-lg 
+          p-4 
+          text-center 
+          ${config.container}
+        `}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

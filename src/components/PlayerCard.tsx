@@ -1,6 +1,7 @@
 import { playerCardData } from "../data/playerCard";
 import svg from "./PlayerCardBackground.svg";
 import StatPair from "./StatPair";
+import { motion } from "framer-motion";
 
 interface PlayerCardProps {
   size: "full" | "mini";
@@ -30,7 +31,18 @@ export default function PlayerCard({ size }: PlayerCardProps) {
   const classes = sizeClasses[size];
 
   return (
-    <div className={`relative aspect-[384/681] ${classes.container} `}>
+    <motion.div
+      className={`relative aspect-[384/681] ${classes.container}`}
+      whileHover={{
+        y: -5,
+        scale: 1.02,
+        transition: { type: "spring", stiffness: 400, damping: 10 },
+      }}
+      whileTap={{
+        scale: 1,
+        boxShadow: "0 5px 10px rgba(0,0,0,0.1)",
+      }}
+    >
       <img
         src={svg}
         alt="playerCardBackground"
@@ -64,6 +76,6 @@ export default function PlayerCard({ size }: PlayerCardProps) {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
