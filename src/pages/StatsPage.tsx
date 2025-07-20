@@ -12,21 +12,26 @@ const StatsPage: React.FC = () => {
       className="md:hidden space-y-6"
       aria-label="Professional skills - Mobile view"
     >
-      {professionalSkillCategories.map((skillCategory) => (
+      {professionalSkillCategories.map((skillCategory, categoryIndex) => (
         <div
           key={`mobile-${skillCategory.id}`}
           className="flex items-stretch gap-4"
         >
           {/* Main skill category overview */}
-          <StatCategoryCard category={skillCategory} displaySize="small" />
+          <StatCategoryCard
+            category={skillCategory}
+            displaySize="small"
+            delay={categoryIndex * 0.1}
+          />
 
           {/* Individual skill breakdown */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {skillCategory.substats.map((individualSkill) => (
+            {skillCategory.substats.map((individualSkill, subIndex) => (
               <StatSubCategoryCard
                 key={`${skillCategory.id}-${individualSkill.id}`}
                 substatistic={individualSkill}
                 displaySize="small"
+                delay={categoryIndex * 0.1 + (subIndex + 1) * 0.15}
               />
             ))}
           </div>
@@ -40,10 +45,14 @@ const StatsPage: React.FC = () => {
       className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-6"
       aria-label="Professional skills - Desktop view"
     >
-      {professionalSkillCategories.map((skillCategory) => (
+      {professionalSkillCategories.map((skillCategory, categoryIndex) => (
         <div key={`desktop-${skillCategory.id}`} className="flex flex-col">
           {/* Main skill category overview */}
-          <StatCategoryCard category={skillCategory} displaySize="large" />
+          <StatCategoryCard
+            category={skillCategory}
+            displaySize="large"
+            delay={categoryIndex * 0.2}
+          />
 
           {/* Individual skill breakdown */}
           <div
@@ -51,11 +60,12 @@ const StatsPage: React.FC = () => {
             role="list"
             aria-label={`${skillCategory.name} skills`}
           >
-            {skillCategory.substats.map((individualSkill) => (
+            {skillCategory.substats.map((individualSkill, subIndex) => (
               <StatSubCategoryCard
                 key={`${skillCategory.id}-${individualSkill.id}`}
                 substatistic={individualSkill}
                 displaySize="large"
+                delay={categoryIndex * 0.2 + (subIndex + 1) * 0.1}
               />
             ))}
           </div>

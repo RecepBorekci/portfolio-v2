@@ -1,18 +1,24 @@
 import React from "react";
+import { motion } from "motion/react";
 import { StatCategory } from "../types/portfolio";
 import {
   getStatColorByValue,
   getCategoryConfig,
-  ANIMATIONS,
 } from "../constants/statThemes";
+import AnimatedNumber from "./AnimatedNumber";
+import {
+  statCategoryAnimations,
+  STATS_ANIMATION,
+} from "../animation/statsPage";
 
 interface StatCategoryCardProps {
   category: StatCategory;
   displaySize: "small" | "large";
+  delay?: number;
 }
 
 const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
-  ({ category, displaySize }) => {
+  ({ category, displaySize, delay = 0 }) => {
     const config = getCategoryConfig(displaySize);
 
     const renderCircularProgress = () => {
@@ -34,35 +40,51 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
               fill="transparent"
               d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
             />
-            {/* Progress circle */}
-            <path
+            {/* Animated Progress circle */}
+            <motion.path
               stroke={currentColor}
               strokeWidth="3"
               fill="transparent"
-              strokeDasharray={`${category.value}, 100`}
               strokeLinecap="round"
               d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              style={{ transition: ANIMATIONS.STROKE_TRANSITION }}
+              initial={statCategoryAnimations.progressCircle.initial}
+              animate={statCategoryAnimations.progressCircle.animate(
+                category.value,
+                delay
+              )}
             />
           </svg>
 
-          {/* Value in center */}
+          {/* Animated Value in center */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <span
+            <AnimatedNumber
+              value={category.value}
+              duration={STATS_ANIMATION.DURATION.PROGRESS}
+              delay={delay}
               className={`${config.value} font-bold`}
               style={{ color: currentColor }}
-              aria-hidden="true"
-            >
-              {category.value}
-            </span>
+              aria-hidden={true}
+            />
           </div>
         </div>
       );
     };
 
     return (
-      <article
-        className={`bg-gray-800/80 border border-gray-600/30 rounded-lg p-4 text-center ${config.container}`}
+      <motion.article
+        className={`
+          bg-gray-800/80 
+          border 
+          border-gray-600/30 
+          hover:bg-gray-700/60
+          hover:border-gray-500/40
+          rounded-lg 
+          p-4 
+          text-center 
+          ${config.container}
+        `}
+        initial={statCategoryAnimations.initial}
+        animate={statCategoryAnimations.animate(delay)}
       >
         {renderCircularProgress()}
 
@@ -71,7 +93,7 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
         >
           {category.name}
         </h3>
-      </article>
+      </motion.article>
     );
   }
 );

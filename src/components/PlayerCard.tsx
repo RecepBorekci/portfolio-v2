@@ -1,6 +1,8 @@
 import { playerCardData } from "../data/playerCard";
 import svg from "./PlayerCardBackground.svg";
 import StatPair from "./StatPair";
+import { motion } from "motion/react";
+import { playerCardAnimations } from "../animation/mainPage";
 
 interface PlayerCardProps {
   size: "full" | "mini";
@@ -30,7 +32,11 @@ export default function PlayerCard({ size }: PlayerCardProps) {
   const classes = sizeClasses[size];
 
   return (
-    <div className={`relative aspect-[384/681] ${classes.container} `}>
+    <motion.div
+      className={`relative aspect-[384/681] ${classes.container}`}
+      whileHover={playerCardAnimations.hover}
+      whileTap={playerCardAnimations.tap}
+    >
       <img
         src={svg}
         alt="playerCardBackground"
@@ -64,6 +70,6 @@ export default function PlayerCard({ size }: PlayerCardProps) {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,14 +1,24 @@
 import { Experience } from "../types/portfolio";
 import ViewMoreLink from "./ViewMoreLink";
 import TagPill from "./TagPill";
+import { motion } from "motion/react";
+import { experienceCardAnimations } from "../animation/seasonPage";
 
 interface ExperienceCardProps {
   experience: Experience;
+  index?: number;
 }
 
-function ExperienceCard({ experience }: ExperienceCardProps) {
+function ExperienceCard({ experience, index = 0 }: ExperienceCardProps) {
   return (
-    <div className="bg-blue-900/45 rounded-3xl p-4 shadow-lg grid grid-cols-2 items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[280px] hover:scale-[1.01] hover:shadow-2xl">
+    <motion.div
+      initial={experienceCardAnimations.initial}
+      whileInView={experienceCardAnimations.whileInView(index)}
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={experienceCardAnimations.hover}
+      transition={experienceCardAnimations.transition}
+      className="bg-blue-900/45 rounded-3xl p-4 shadow-lg grid grid-cols-2 items-center min-h-[220px] lg:min-h-[240px] xl:min-h-[280px] border border-transparent"
+    >
       {/* Left - Logo */}
       <div className="flex items-center justify-center">
         <img
@@ -32,7 +42,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
         <ViewMoreLink slug={experience.slug} ariaLabel={experience.ariaLabel} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
