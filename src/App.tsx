@@ -1,16 +1,16 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import InfoMenu from "./components/InfoMenu";
-import AnimatedRouteWrapper from "./components/AnimatedRouteWrapper";
-import BackgroundMotionWrapper from "./components/BackgroundMotionWrapper";
-import { routes } from "./routes";
-import { useRef, useState, useEffect } from "react";
-import { routeIndexMap } from "./animation/common";
+import { Routes, Route, useLocation } from 'react-router-dom';
+import InfoMenu from './components/InfoMenu';
+import AnimatedRouteWrapper from './components/AnimatedRouteWrapper';
+import BackgroundMotionWrapper from './components/BackgroundMotionWrapper';
+import { routes } from './routes';
+import { useRef, useState, useEffect } from 'react';
+import { routeIndexMap } from './animation/common';
 
 function App() {
   const location = useLocation();
-  const isMainPage = location.pathname === "/";
+  const isMainPage = location.pathname === '/';
   const [direction, setDirection] = useState<number>(0);
-  const prevLocationRef = useRef<string>("/");
+  const prevLocationRef = useRef<string>('/');
 
   // Calculate direction based on route changes
   useEffect(() => {
@@ -20,8 +20,8 @@ function App() {
     // Get route indices for direction calculation
     const getCurrentRouteIndex = (path: string): number => {
       // Handle dynamic routes like /season/:slug
-      if (path.startsWith("/season/") && path !== "/season") {
-        return routeIndexMap["/season/:slug"];
+      if (path.startsWith('/season/') && path !== '/season') {
+        return routeIndexMap['/season/:slug'];
       }
       return routeIndexMap[path] ?? 0;
     };
@@ -40,7 +40,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="relative min-h-screen z-10">
+    <div className="relative z-10 min-h-screen">
       {/* Animated background image with blur/brightness */}
       <BackgroundMotionWrapper isMainPage={isMainPage} />
 
@@ -49,7 +49,7 @@ function App() {
 
       <AnimatedRouteWrapper direction={direction}>
         <Routes location={location}>
-          {routes.map((route) => (
+          {routes.map(route => (
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
         </Routes>

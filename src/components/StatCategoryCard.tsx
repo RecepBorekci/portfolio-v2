@@ -1,19 +1,19 @@
-import React from "react";
-import { motion } from "motion/react";
-import { StatCategory } from "../types/portfolio";
+import React from 'react';
+import { motion } from 'motion/react';
+import { StatCategory } from '../types/portfolio';
 import {
   getStatColorByValue,
   getCategoryConfig,
-} from "../constants/statThemes";
-import AnimatedNumber from "./AnimatedNumber";
+} from '../constants/statThemes';
+import AnimatedNumber from './AnimatedNumber';
 import {
   statCategoryAnimations,
   STATS_ANIMATION,
-} from "../animation/statsPage";
+} from '../animation/statsPage';
 
 interface StatCategoryCardProps {
   category: StatCategory;
-  displaySize: "small" | "large";
+  displaySize: 'small' | 'large';
   delay?: number;
 }
 
@@ -27,7 +27,7 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
       return (
         <div className={`relative ${config.circle} mx-auto mb-2`}>
           <svg
-            className={`${config.circle} transform -rotate-90`}
+            className={`${config.circle} -rotate-90 transform`}
             viewBox="0 0 36 36"
             role="img"
             aria-label={`${category.name} skill level: ${category.value} out of 100`}
@@ -72,24 +72,14 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
 
     return (
       <motion.article
-        className={`
-          bg-gray-800/80 
-          border 
-          border-gray-600/30 
-          hover:bg-gray-700/60
-          hover:border-gray-500/40
-          rounded-lg 
-          p-4 
-          text-center 
-          ${config.container}
-        `}
+        className={`rounded-lg border border-gray-600/30 bg-gray-800/80 p-4 text-center hover:border-gray-500/40 hover:bg-gray-700/60 ${config.container} `}
         initial={statCategoryAnimations.initial}
         animate={statCategoryAnimations.animate(delay)}
       >
         {renderCircularProgress()}
 
         <h3
-          className={`${config.title} font-bold text-white uppercase tracking-wider`}
+          className={`${config.title} font-bold tracking-wider text-white uppercase`}
         >
           {category.name}
         </h3>
@@ -98,6 +88,6 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
   }
 );
 
-StatCategoryCard.displayName = "StatCategoryCard";
+StatCategoryCard.displayName = 'StatCategoryCard';
 
 export default StatCategoryCard;

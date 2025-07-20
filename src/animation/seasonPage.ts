@@ -1,5 +1,5 @@
-import { DURATIONS, EASINGS } from "./common";
-import { Transition } from "motion";
+import { DURATIONS, EASINGS } from './common';
+import { Transition } from 'motion';
 
 // Season page container animation
 export const seasonContainerAnimation = {
@@ -20,11 +20,11 @@ export const experienceCardAnimations = {
       ease: EASINGS.DEFAULT,
     } as Transition,
   }),
-  viewport: { once: true, margin: "-50px" },
+  viewport: { once: true, margin: '-50px' },
   hover: {
     scale: 1.02,
-    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.25)",
-    borderColor: "rgba(234, 179, 8, 0.3)",
+    boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.25)',
+    borderColor: 'rgba(234, 179, 8, 0.3)',
   },
   transition: EASINGS.SPRING as Transition,
 };

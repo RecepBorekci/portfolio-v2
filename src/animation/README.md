@@ -19,10 +19,10 @@ This folder contains the animation configurations for the portfolio site, organi
 
 ```tsx
 // Direct import from specific file
-import { playerCardAnimations } from "../animation/mainPage";
+import { playerCardAnimations } from '../animation/mainPage';
 
 // Import from index
-import { fadeIn, playerCardAnimations } from "../animation";
+import { fadeIn, playerCardAnimations } from '../animation';
 ```
 
 ### Apply animations to components

@@ -1,5 +1,5 @@
-import { DURATIONS, EASINGS } from "./common";
-import { Transition } from "motion";
+import { DURATIONS, EASINGS } from './common';
+import { Transition } from 'motion';
 
 // Constants for stats animations
 export const STATS_ANIMATION = {
@@ -30,7 +30,7 @@ export const statCategoryAnimations = {
   }),
   // Progress circle animation
   progressCircle: {
-    initial: { strokeDasharray: "0, 100" },
+    initial: { strokeDasharray: '0, 100' },
     animate: (value: number, delay: number) => ({
       strokeDasharray: `${value}, 100`,
       transition: {
@@ -56,7 +56,7 @@ export const statSubCategoryAnimations = {
   }),
   // Progress bar animation
   progressBar: {
-    initial: { width: "0%" },
+    initial: { width: '0%' },
     animate: (value: string, delay: number) => ({
       width: value,
       transition: {

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { motion, useMotionValue, useTransform, animate } from "motion/react";
+import React, { useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'motion/react';
 
 interface AnimatedNumberProps {
   value: number;
@@ -7,25 +7,25 @@ interface AnimatedNumberProps {
   delay?: number;
   className?: string;
   style?: React.CSSProperties;
-  "aria-hidden"?: boolean;
+  'aria-hidden'?: boolean;
 }
 
 const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   value,
   duration = 1.5,
   delay = 0,
-  className = "",
+  className = '',
   style,
-  "aria-hidden": ariaHidden = false,
+  'aria-hidden': ariaHidden = false,
 }) => {
   const motionValue = useMotionValue(0);
-  const rounded = useTransform(motionValue, (latest) => Math.round(latest));
+  const rounded = useTransform(motionValue, latest => Math.round(latest));
 
   useEffect(() => {
     const controls = animate(motionValue, value, {
       duration,
       delay,
-      ease: "easeOut",
+      ease: 'easeOut',
     });
 
     return controls.stop;

@@ -1,12 +1,12 @@
-import { DURATIONS } from "./common";
-import { Transition } from "motion";
+import { DURATIONS } from './common';
+import { Transition } from 'motion';
 
 // Info button animations
 export const infoButtonAnimations = {
   hover: {
     scale: 1.05,
     backgroundColor: (isActive: boolean) =>
-      isActive ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.2)",
+      isActive ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.2)',
   },
   tap: {
     scale: 0.95,
@@ -54,7 +54,7 @@ export const returnButtonAnimations = {
   hover: {
     x: -3,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 500,
       damping: 17,
     } as Transition,

@@ -1,22 +1,22 @@
-import PlayerCard from "../components/PlayerCard";
-import SidePanel from "../components/SidePanel";
-import Platform from "../components/Platform.svg?react";
+import PlayerCard from '../components/PlayerCard';
+import SidePanel from '../components/SidePanel';
+import Platform from '../components/Platform.svg?react';
 import {
   PageContainer,
   ResponsiveContainer,
   DesktopContainer,
-} from "../components/MainPageLayout";
+} from '../components/MainPageLayout';
 
 // Mobile/Tablet Layout
 const MobileLayout = () => (
   <ResponsiveContainer className="xl:hidden">
-    <div className="hidden md:block self-end">
+    <div className="hidden self-end md:block">
       <SidePanel mirrored={false} />
     </div>
     <div className="flex justify-center">
       <PlayerCard size="full" />
     </div>
-    <div className="hidden md:block self-end">
+    <div className="hidden self-end md:block">
       <SidePanel mirrored={true} />
     </div>
   </ResponsiveContainer>
@@ -25,7 +25,7 @@ const MobileLayout = () => (
 // Desktop Layout
 const DesktopLayout = () => (
   <DesktopContainer className="hidden xl:block">
-    <div className="w-[80vw] h-full flex justify-center xl:absolute xl:bottom-0 xl:left-1/2 xl:-translate-x-1/2 xl:z-20 xl:w-auto xl:h-auto">
+    <div className="flex h-full w-[80vw] justify-center xl:absolute xl:bottom-0 xl:left-1/2 xl:z-20 xl:h-auto xl:w-auto xl:-translate-x-1/2">
       <Platform />
     </div>
     <div className="hidden lg:block">

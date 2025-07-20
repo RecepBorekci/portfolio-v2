@@ -1,32 +1,32 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("src/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: 'Roboto';
+  src: url('src/assets/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("src/assets/fonts/Inter-Regular.ttf") format("truetype");
+  font-family: 'Inter';
+  src: url('src/assets/fonts/Inter-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Orbitron";
-  src: url("src/assets/fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+  font-family: 'Orbitron';
+  src: url('src/assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "ChakraPetch";
-  src: url("src/assets/fonts/ChakraPetch-Regular.ttf") format("truetype");
+  font-family: 'ChakraPetch';
+  src: url('src/assets/fonts/ChakraPetch-Regular.ttf') format('truetype');
 }
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-roboto: "Roboto", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --font-orbitron: "Orbitron", sans-serif;
-  --font-chakrapetch: "ChakraPetch", sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-chakrapetch: 'ChakraPetch', sans-serif;
 }
 
 body {
-  font-family: "ChakraPetch", "Inter", "Roboto", sans-serif;
+  font-family: 'ChakraPetch', 'Inter', 'Roboto', sans-serif;
 }

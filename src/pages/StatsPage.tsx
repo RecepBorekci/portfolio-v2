@@ -1,15 +1,15 @@
-import React from "react";
-import StatCategoryCard from "../components/StatCategoryCard";
-import StatSubCategoryCard from "../components/StatSubCategoryCard";
-import { statsPageData } from "../data/stats";
-import { StatCategory } from "../types/portfolio";
+import React from 'react';
+import StatCategoryCard from '../components/StatCategoryCard';
+import StatSubCategoryCard from '../components/StatSubCategoryCard';
+import { statsPageData } from '../data/stats';
+import { StatCategory } from '../types/portfolio';
 
 const StatsPage: React.FC = () => {
   const professionalSkillCategories: StatCategory[] = statsPageData;
 
   const renderMobileLayout = () => (
     <section
-      className="md:hidden space-y-6"
+      className="space-y-6 md:hidden"
       aria-label="Professional skills - Mobile view"
     >
       {professionalSkillCategories.map((skillCategory, categoryIndex) => (
@@ -25,7 +25,7 @@ const StatsPage: React.FC = () => {
           />
 
           {/* Individual skill breakdown */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2">
             {skillCategory.substats.map((individualSkill, subIndex) => (
               <StatSubCategoryCard
                 key={`${skillCategory.id}-${individualSkill.id}`}
@@ -42,7 +42,7 @@ const StatsPage: React.FC = () => {
 
   const renderDesktopLayout = () => (
     <section
-      className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-6"
+      className="hidden grid-cols-3 gap-6 md:grid lg:grid-cols-6"
       aria-label="Professional skills - Desktop view"
     >
       {professionalSkillCategories.map((skillCategory, categoryIndex) => (
@@ -75,13 +75,13 @@ const StatsPage: React.FC = () => {
   );
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-2xl border border-gray-600/20 rounded-xl w-full max-w-7xl mx-auto p-8">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2 font-orbitron">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4">
+      <div className="mx-auto w-full max-w-7xl rounded-xl border border-gray-600/20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8 shadow-2xl">
+        <header className="mb-8 text-center">
+          <h1 className="font-orbitron mb-2 text-4xl font-bold text-white">
             Professional Skills Overview
           </h1>
-          <p className="text-gray-300 text-lg font-orbitron">
+          <p className="font-orbitron text-lg text-gray-300">
             Technical expertise and competencies presented in player stats
             format
           </p>

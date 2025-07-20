@@ -1,5 +1,5 @@
-import { DURATIONS, EASINGS } from "./common";
-import { Transition } from "motion";
+import { DURATIONS, EASINGS } from './common';
+import { Transition } from 'motion';
 
 // ProfilePage container animation
 export const profileContainerAnimation = {
@@ -18,7 +18,7 @@ export const profileImageAnimation = {
   transition: {
     duration: 0.5,
     delay: 0.2,
-    type: "spring",
+    type: 'spring',
     stiffness: 200,
   } as Transition,
   hover: {
