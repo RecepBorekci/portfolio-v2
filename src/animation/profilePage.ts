@@ -1,4 +1,4 @@
-import { DURATIONS, EASINGS } from "./common.js";
+import { DURATIONS, EASINGS } from "./common";
 import { Transition } from "motion";
 
 // ProfilePage container animation

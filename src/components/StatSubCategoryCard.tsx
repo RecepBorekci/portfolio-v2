@@ -63,10 +63,11 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
     return (
       <motion.article
         className={`
-          bg-gray-700/50 
-          hover:bg-gray-600/50
-          transition-colors
-          duration-0
+          bg-gray-800/80 
+          border 
+          border-gray-600/30 
+          hover:bg-gray-700/60
+          hover:border-gray-500/40
           rounded-lg 
           px-3 
           ${config.container}

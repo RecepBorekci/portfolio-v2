@@ -61,7 +61,6 @@ export default function InfoButton({
       variants={motionVariants}
       whileHover="hover"
       whileTap="tap"
-      whileFocus="focus"
       className="w-full h-full"
     >
       <NavLink

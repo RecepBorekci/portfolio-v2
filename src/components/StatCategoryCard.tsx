@@ -78,8 +78,6 @@ const StatCategoryCard: React.FC<StatCategoryCardProps> = React.memo(
           border-gray-600/30 
           hover:bg-gray-700/60
           hover:border-gray-500/40
-          transition-colors
-          duration-0
           rounded-lg 
           p-4 
           text-center 
