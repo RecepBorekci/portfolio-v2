@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "motion/react";
-import { useLocation } from "react-router-dom";
-import { pageTransitionVariants } from "../animation/common";
+import { AnimatePresence, motion } from 'motion/react';
+import { useLocation } from 'react-router-dom';
+import { pageTransitionVariants } from '../animation/common';
 
 interface AnimatedRouteWrapperProps {
   children: React.ReactNode;
@@ -23,12 +23,12 @@ export default function AnimatedRouteWrapper({
         exit="exit"
         transition={{
           duration: 0.4,
-          ease: "easeOut",
+          ease: 'easeOut',
         }}
         style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
+          position: 'relative',
+          width: '100%',
+          height: '100%',
         }}
       >
         {children}

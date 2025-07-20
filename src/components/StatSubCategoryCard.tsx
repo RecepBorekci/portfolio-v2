@@ -1,19 +1,19 @@
-import React from "react";
-import { motion } from "motion/react";
-import { StatSubCategory } from "../types/portfolio";
+import React from 'react';
+import { motion } from 'motion/react';
+import { StatSubCategory } from '../types/portfolio';
 import {
   getStatColorByValue,
   getSubCategoryConfig,
-} from "../constants/statThemes";
-import AnimatedNumber from "./AnimatedNumber";
+} from '../constants/statThemes';
+import AnimatedNumber from './AnimatedNumber';
 import {
   statSubCategoryAnimations,
   STATS_ANIMATION,
-} from "../animation/statsPage";
+} from '../animation/statsPage';
 
 interface StatSubCategoryCardProps {
   substatistic: StatSubCategory;
-  displaySize: "small" | "large";
+  displaySize: 'small' | 'large';
   delay?: number;
 }
 
@@ -25,7 +25,7 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
 
     const renderProgressBar = () => (
       <div
-        className={`w-full bg-gray-600/50 rounded ${config.progressBar.container}`}
+        className={`w-full rounded bg-gray-600/50 ${config.progressBar.container}`}
         role="progressbar"
         aria-valuenow={substatistic.value}
         aria-valuemin={0}
@@ -45,7 +45,7 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
     );
 
     const renderStatHeader = () => (
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <span className={`${config.label} truncate font-medium`}>
           {substatistic.label}
         </span>
@@ -62,16 +62,7 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
 
     return (
       <motion.article
-        className={`
-          bg-gray-800/80 
-          border 
-          border-gray-600/30 
-          hover:bg-gray-700/60
-          hover:border-gray-500/40
-          rounded-lg 
-          px-3 
-          ${config.container}
-        `}
+        className={`rounded-lg border border-gray-600/30 bg-gray-800/80 px-3 hover:border-gray-500/40 hover:bg-gray-700/60 ${config.container} `}
         initial={statSubCategoryAnimations.initial}
         animate={statSubCategoryAnimations.animate(delay)}
       >
@@ -82,6 +73,6 @@ const StatSubCategoryCard: React.FC<StatSubCategoryCardProps> = React.memo(
   }
 );
 
-StatSubCategoryCard.displayName = "StatSubCategoryCard";
+StatSubCategoryCard.displayName = 'StatSubCategoryCard';
 
 export default StatSubCategoryCard;

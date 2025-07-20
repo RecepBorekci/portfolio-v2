@@ -1,4 +1,4 @@
-import { Easing, Transition } from "motion";
+import { Easing, Transition } from 'motion';
 
 // Common animation variants and constants used across multiple components
 export const pageTransitionVariants = {
@@ -20,12 +20,12 @@ export const pageTransitionVariants = {
 };
 
 export const routeIndexMap: { [key: string]: number } = {
-  "/": 0,
-  "/profile": 1,
-  "/season": 2,
-  "/stats": 3,
-  "/season/:slug": 2, // Use same index as /season for detail pages
-  "/experience-not-found": 2, // Use same index as /season for error pages
+  '/': 0,
+  '/profile': 1,
+  '/season': 2,
+  '/stats': 3,
+  '/season/:slug': 2, // Use same index as /season for detail pages
+  '/experience-not-found': 2, // Use same index as /season for error pages
 };
 
 // Common durations and easings used across animations
@@ -37,10 +37,10 @@ export const DURATIONS = {
 };
 
 export const EASINGS = {
-  DEFAULT: "easeOut" as Easing,
+  DEFAULT: 'easeOut' as Easing,
   BOUNCE: [0.175, 0.885, 0.32, 1.275], // Custom bounce effect
-  SPRING: { type: "spring", stiffness: 300, damping: 20 },
-  SPRING_GENTLE: { type: "spring", stiffness: 200, damping: 15 },
+  SPRING: { type: 'spring', stiffness: 300, damping: 20 },
+  SPRING_GENTLE: { type: 'spring', stiffness: 200, damping: 15 },
 };
 
 // Standard animation presets that can be used across components

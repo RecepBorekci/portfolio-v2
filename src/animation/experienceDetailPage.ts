@@ -1,5 +1,5 @@
-import { DURATIONS, EASINGS } from "./common";
-import { Transition } from "motion";
+import { DURATIONS, EASINGS } from './common';
+import { Transition } from 'motion';
 
 // Base animation for components that slide in from bottom with fade
 export const slideInFromBottom = {
@@ -69,7 +69,7 @@ export const experienceDetailAnimations = {
 export const viewportAnimation = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
+  viewport: { once: true, margin: '-50px' },
   transition: {
     duration: DURATIONS.MEDIUM,
     ease: EASINGS.DEFAULT,

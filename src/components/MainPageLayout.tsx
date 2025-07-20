@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: ReactNode;
   className?: string;
 };
 
-export const PageContainer = ({ children, className = "" }: LayoutProps) => (
+export const PageContainer = ({ children, className = '' }: LayoutProps) => (
   <div
-    className={`min-h-screen overflow-hidden relative flex flex-col items-center justify-center gap-10 ${className}`}
+    className={`relative flex min-h-screen flex-col items-center justify-center gap-10 overflow-hidden ${className}`}
   >
     {children}
   </div>
@@ -15,17 +15,17 @@ export const PageContainer = ({ children, className = "" }: LayoutProps) => (
 
 export const ResponsiveContainer = ({
   children,
-  className = "",
+  className = '',
 }: LayoutProps) => (
   <div
-    className={`relative w-full max-w-[1280px] px-4 flex items-center justify-around ${className}`}
+    className={`relative flex w-full max-w-[1280px] items-center justify-around px-4 ${className}`}
   >
     {children}
   </div>
 );
 
-export const DesktopContainer = ({ children, className = "" }: LayoutProps) => (
-  <div className={`relative w-full max-w-[1678px] h-[800px] ${className}`}>
+export const DesktopContainer = ({ children, className = '' }: LayoutProps) => (
+  <div className={`relative h-[800px] w-full max-w-[1678px] ${className}`}>
     {children}
   </div>
 );

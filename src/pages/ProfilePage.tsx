@@ -1,14 +1,14 @@
-import ProfileAttributeList from "../components/ProfileAttributeList";
-import PlayerCard from "../components/PlayerCard";
-import { profilePageData } from "../data/profile";
-import { ProfileData } from "../types/portfolio";
-import { motion } from "motion/react";
+import ProfileAttributeList from '../components/ProfileAttributeList';
+import PlayerCard from '../components/PlayerCard';
+import { profilePageData } from '../data/profile';
+import { ProfileData } from '../types/portfolio';
+import { motion } from 'motion/react';
 import {
   profileContainerAnimation,
   profileImageAnimation,
   playerCardAnimation,
   profileContentAnimation,
-} from "../animation/profilePage";
+} from '../animation/profilePage';
 
 function ProfilePage() {
   const {
@@ -22,28 +22,28 @@ function ProfilePage() {
   }: ProfileData = profilePageData;
 
   return (
-    <main className="min-h-screen w-full flex items-center justify-center px-4 py-12 text-white">
+    <main className="flex min-h-screen w-full items-center justify-center px-4 py-12 text-white">
       <motion.div
         initial={profileContainerAnimation.initial}
         animate={profileContainerAnimation.animate}
         transition={profileContainerAnimation.transition}
-        className="bg-gradient-to-br from-black/60 via-gray-900/60 to-yellow-900/30 shadow-2xl border border-yellow-400/10 rounded-xl shadow-xl w-full container mx-auto p-10 grid grid-cols-1 lg:grid-cols-3 gap-8"
+        className="container mx-auto grid w-full grid-cols-1 gap-8 rounded-xl border border-yellow-400/10 bg-gradient-to-br from-black/60 via-gray-900/60 to-yellow-900/30 p-10 shadow-2xl shadow-xl lg:grid-cols-3"
       >
         {/* Left - Avatar */}
         <motion.div
           initial={profileImageAnimation.initial}
           animate={profileImageAnimation.animate}
           transition={profileImageAnimation.transition}
-          className="col-span-1 flex justify-center items-center"
+          className="col-span-1 flex items-center justify-center"
         >
           <motion.img
             whileHover={profileImageAnimation.hover}
             src={avatar}
             alt={`${name} avatar`}
-            className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] object-contain"
+            className="w-[220px] object-contain sm:w-[280px] md:w-[320px] lg:w-[380px]"
           />
         </motion.div>
-        <div className="md:col-span-1 lg:hidden flex justify-center items-center">
+        <div className="flex items-center justify-center md:col-span-1 lg:hidden">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -56,8 +56,8 @@ function ProfilePage() {
         {/* Right - Main Content */}
         <div className="col-span-2 flex flex-col gap-8">
           {/* Top Row - Card + Info */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
-            <div className="hidden lg:inline md:col-span-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-10">
+            <div className="hidden md:col-span-2 lg:inline">
               <motion.div
                 initial={playerCardAnimation.initial}
                 animate={playerCardAnimation.animate}
@@ -70,10 +70,10 @@ function ProfilePage() {
               initial={profileContentAnimation.initial}
               animate={profileContentAnimation.animate}
               transition={profileContentAnimation.transition}
-              className="col-span-5 lg:col-span-3 flex flex-col gap-2 justify-center px-4"
+              className="col-span-5 flex flex-col justify-center gap-2 px-4 lg:col-span-3"
             >
               <h1 className="text-4xl font-bold">{name}</h1>
-              <h2 className="text-2xl text-yellow-400 font-semibold">
+              <h2 className="text-2xl font-semibold text-yellow-400">
                 {title}
               </h2>
               <p className="text-lg text-gray-200">{description}</p>
@@ -81,7 +81,7 @@ function ProfilePage() {
           </div>
 
           {/* Bottom Row - Skills / Languages / Hobbies */}
-          <div className="flex flex-col md:grid grid-cols-3 gap-8 text-base">
+          <div className="flex grid-cols-3 flex-col gap-8 text-base md:grid">
             <ProfileAttributeList
               title="Skills"
               items={skills}
