@@ -1,71 +1,57 @@
-      <svg
-        width="1678"
-        height="121"
-        viewBox="0 0 1678 121"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M63.5 77.5V44.5L556 1H1108L1587 45V78L1108 31.5H556L63.5 77.5Z"
-          fill="white"
-          stroke="white"
-        />
-        <path
-          d="M1 120V83L555 30H1107L1677 87.5V120.5L1107 109.5H555L1 120Z"
-          fill="#2A05FF"
-        />
-        <line x1="557" y1="30" x2="557" y2="50" stroke="black" />
-        <line x1="554" y1="50" x2="554" y2="70" stroke="black" />
-        <line x1="554.5" y1="70.5" x2="550.5" y2="70.5" stroke="black" />
-        <line x1="557.5" y1="50.5" x2="553.5" y2="50.5" stroke="black" />
-        <path d="M547 91V110" stroke="black" />
-        <line x1="551" y1="71" x2="551" y2="91" stroke="black" />
-        <line x1="551.5" y1="91.5" x2="547.5" y2="91.5" stroke="black" />
-        <line
-          y1="-0.5"
-          x2="20"
-          y2="-0.5"
-          transform="matrix(0 1 1 0 1109 30)"
-          stroke="black"
-        />
-        <line
-          y1="-0.5"
-          x2="20"
-          y2="-0.5"
-          transform="matrix(0 1 1 0 1112 50)"
-          stroke="black"
-        />
-        <line
-          y1="-0.5"
-          x2="4"
-          y2="-0.5"
-          transform="matrix(1 0 0 -1 1111 70)"
-          stroke="black"
-        />
-        <line
-          y1="-0.5"
-          x2="4"
-          y2="-0.5"
-          transform="matrix(1 0 0 -1 1108 50)"
-          stroke="black"
-        />
-        <path d="M1118.5 91V110" stroke="black" />
-        <line
-          y1="-0.5"
-          x2="20"
-          y2="-0.5"
-          transform="matrix(0 1 1 0 1115 71)"
-          stroke="black"
-        />
-        <line
-          y1="-0.5"
-          x2="4"
-          y2="-0.5"
-          transform="matrix(1 0 0 -1 1114 91)"
-          stroke="black"
-        />
-        <line x1="557" y1="50.5" x2="1109" y2="50.5" stroke="black" />
-        <line x1="557" y1="30.5" x2="1109" y2="30.5" stroke="black" />
-        <line x1="554" y1="70.5" x2="1111" y2="70.5" stroke="black" />
-        <line x1="551" y1="91.5" x2="1115" y2="91.5" stroke="black" />
-      </svg>
+<svg width="1676" height="123" viewBox="0 0 1676 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_238_315)">
+<path d="M62.5 76.5V43.5L555 0H1107L1586 44V77L1107 30.5H555L62.5 76.5Z" fill="url(#paint0_linear_238_315)"/>
+</g>
+<path d="M0 119V82L554 29H1106L1676 86.5V119.5L1106 108.5H554L0 119Z" fill="url(#paint1_linear_238_315)"/>
+<g filter="url(#filter1_d_238_315)">
+<path d="M1107.17 30L1110.79 49H553.209L556.828 30H1107.17Z" fill="#2605E1" stroke="black" stroke-width="2"/>
+<path d="M1114.14 50L1117.79 69H546.209L549.828 50H1114.14Z" fill="#2605E1" stroke="black" stroke-width="2"/>
+<path d="M1122.17 70L1125.8 89.9971L539.211 89.002L542.887 70H1122.17Z" fill="#2605E1" stroke="black" stroke-width="2"/>
+<path d="M1129.12 90L1132.78 108H532.22L535.819 90H1129.12Z" fill="#2605E1" stroke="black" stroke-width="2"/>
+</g>
+<path opacity="0.5" d="M1134 109H531L535 90H538L542.062 70H545L549 50H552L556 29H1108L1112 50H1114.97L1119 70H1123L1127 90H1129.93L1134 109Z" fill="url(#paint2_linear_238_315)"/>
+<path d="M1112 29H1107L1111 49H1116L1112 29Z" fill="black"/>
+<path d="M1118 49H1113L1117 69H1122L1118 49Z" fill="black"/>
+<path d="M1124 69H1119L1123 89H1128L1124 69Z" fill="black"/>
+<path d="M1130 89H1125L1129 109H1134L1130 89Z" fill="black"/>
+<path d="M552 29H557L553 49H548L552 29Z" fill="black"/>
+<path d="M546 49H551L547 69H542L546 49Z" fill="black"/>
+<path d="M540 69H545L541 89H536L540 69Z" fill="black"/>
+<path d="M534 89H539L535 109H530L534 89Z" fill="black"/>
+<defs>
+<filter id="filter0_i_238_315" x="62.5" y="-4" width="1523.5" height="81" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-4"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_238_315"/>
+</filter>
+<filter id="filter1_d_238_315" x="521" y="23" width="623" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_238_315"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_238_315" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_238_315" x1="62.5" y1="38.5" x2="1586" y2="38.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B4B2B2"/>
+<stop offset="0.5" stop-color="white"/>
+<stop offset="1" stop-color="#B4B2B2"/>
+</linearGradient>
+<linearGradient id="paint1_linear_238_315" x1="0" y1="74.25" x2="1676" y2="74.25" gradientUnits="userSpaceOnUse">
+<stop stop-color="#190399"/>
+<stop offset="0.5" stop-color="#2A05FF"/>
+<stop offset="1" stop-color="#190399"/>
+</linearGradient>
+<linearGradient id="paint2_linear_238_315" x1="832.5" y1="29" x2="832.5" y2="109" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1F00CE"/>
+<stop offset="1" stop-color="#100069"/>
+</linearGradient>
+</defs>
+</svg>
