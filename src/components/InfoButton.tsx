@@ -3,6 +3,7 @@ import { IconType } from 'react-icons';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
+import { infoButtonAnimation } from '../animation/infoMenu';
 
 interface InfoButtonProps {
   icon: IconType;
@@ -27,11 +28,10 @@ export default function InfoButton({
         'flex items-center gap-2 justify-center',
         'lg:flex-col xl:flex-row',
         'border border-white/20 rounded-md',
-        'px-4 py-2',
-        'text-[3.5vw] lg:text-[1.2vw] xl:text-[0.9vw]',
-        'min-w-[80px] lg:min-w-[10vw] xl:min-w-[6vw]',
-        'min-h-[40px] lg:min-h-[8vw] xl:min-h-[4vw]',
-        'w-full h-full',
+        'px-3 sm:px-4 py-2',
+        'text-[3vw] sm:text-[2vw] lg:text-[1.5vw] xl:text-[1vw]',
+        'min-w-[12vw] sm:min-w-[10vw] lg:min-w-[10vw] xl:min-w-[6vw]',
+        'min-h-[12vw] sm:min-h-[10vw] lg:min-h-[8vw] xl:min-h-[5vw]',
         'transition-colors duration-200',
         {
           'text-yellow-300': isActive,
@@ -44,24 +44,24 @@ export default function InfoButton({
   const motionVariants = useMemo(
     () => ({
       hover: {
-        scale: 1.05,
-        backgroundColor: isActive
-          ? 'rgba(255,255,255,0.35)'
-          : 'rgba(255,255,255,0.2)',
+        scale: infoButtonAnimation.hover.scale,
+        backgroundColor: infoButtonAnimation.hover.backgroundColor(isActive),
       },
-      tap: {
-        scale: 0.95,
-      },
+      tap: infoButtonAnimation.tap,
     }),
     [isActive]
   );
+
+  const navLinkBg = isActive
+    ? 'rgba(255,255,255,0.3)'
+    : 'rgba(255,255,255,0.1)';
 
   return (
     <motion.div
       variants={motionVariants}
       whileHover="hover"
       whileTap="tap"
-      className="h-full w-full"
+      className="mb-1 h-full w-full sm:mb-2"
     >
       <NavLink
         to={path}
@@ -69,13 +69,13 @@ export default function InfoButton({
         aria-label={label + ' Button'}
         className={buttonClasses}
         style={{
-          backgroundColor: isActive
-            ? 'rgba(255,255,255,0.3)'
-            : 'rgba(255,255,255,0.1)',
+          backgroundColor: navLinkBg,
         }}
       >
-        <Icon />
-        <span className="font-bold tracking-wide">{label}</span>
+        <Icon className="sm:text-md text-xl" />
+        <span className="hidden font-bold tracking-wide whitespace-nowrap sm:inline">
+          {label}
+        </span>
       </NavLink>
     </motion.div>
   );
