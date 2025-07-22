@@ -29,7 +29,7 @@ export default function InfoButton({
         'lg:flex-col xl:flex-row',
         'border border-white/20 rounded-md',
         'px-3 sm:px-4 py-2',
-        'text-[3wvw] sm:text-[2vw] lg:text-[1.5vw] xl:text-[1vw]',
+        'text-[3vw] sm:text-[2vw] lg:text-[1.5vw] xl:text-[1vw]',
         'min-w-[12vw] sm:min-w-[10vw] lg:min-w-[10vw] xl:min-w-[6vw]',
         'min-h-[12vw] sm:min-h-[10vw] lg:min-h-[8vw] xl:min-h-[5vw]',
         'transition-colors duration-200',

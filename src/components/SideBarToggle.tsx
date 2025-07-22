@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { IconContext } from 'react-icons';
 import { sidebarToggleAnimation } from '../animation/infoMenu';
 
 interface SideBarToggleProps {
@@ -29,9 +30,13 @@ export default function SideBarToggle({
         transition={{ duration: 0.3 }}
       >
         {isCollapsed ? (
-          <FiChevronRight size="md:24 lg:16" />
+          <IconContext.Provider value={{ className: 'text-3xl md:text-4xl' }}>
+            <FiChevronRight />
+          </IconContext.Provider>
         ) : (
-          <FiChevronLeft size="md:24 lg:16" />
+          <IconContext.Provider value={{ className: 'text-3xl md:text-4xl' }}>
+            <FiChevronLeft />
+          </IconContext.Provider>
         )}
       </motion.div>
     </motion.button>
