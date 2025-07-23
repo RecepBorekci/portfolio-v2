@@ -3,10 +3,28 @@ import { Stat } from '../types/portfolio';
 export const playerCardData: {
   name: string;
   profileImage: string;
+  position: string;
+  countryFlag: {
+    src: string;
+    alt: string;
+  };
+  teamLogo: {
+    src: string;
+    alt: string;
+  };
   stats: Stat[];
 } = {
   name: 'Recep Börekci',
-  profileImage: '/images/profile.jpg',
+  profileImage: '/images/profile.png',
+  position: 'CAM',
+  countryFlag: {
+    src: '/images/Flag_of_Turkey.svg.webp',
+    alt: 'Flag of Turkey',
+  },
+  teamLogo: {
+    src: '/images/AGU.jpg',
+    alt: 'AGU team logo',
+  },
   stats: [
     {
       id: 0,
