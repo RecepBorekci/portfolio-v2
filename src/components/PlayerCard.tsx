@@ -61,7 +61,7 @@ export default function PlayerCard({ size }: PlayerCardProps) {
         {/* Profile section */}
         <div className="relative flex h-[46%] items-center justify-center">
           {/* Absolute Left column */}
-          <div className="absolute top-[45%] left-[-6%] flex h-full w-[25%] -translate-y-1/2 flex-col items-center justify-around">
+          <div className="absolute top-[45%] left-0 flex h-full w-[25%] translate-x-[-10%] -translate-y-1/2 transform flex-col items-center justify-around">
             {/* Average score */}
             <div
               className={`font-orbitron flex flex-col items-center leading-none font-bold text-black ${classes.avgText}`}
