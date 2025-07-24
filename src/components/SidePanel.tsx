@@ -5,6 +5,8 @@ import LeftSidePanelBackground from './LeftSidePanelBackground.svg';
 import RightSidePanelBackground from './RightSidePanelBackground.svg';
 import { motion } from 'motion/react';
 import { sidePanelAnimations } from '../animation/mainPage';
+import CountryFlag from './CountryFlag';
+import TeamLogo from './TeamLogo';
 
 interface SidePanelProps {
   mirrored?: boolean;
@@ -26,6 +28,7 @@ const getSidePanelBackground = (mirrored: boolean) =>
 
 export default function SidePanel({ mirrored = false }: SidePanelProps) {
   const stats: Stat[] = playerCardData.stats;
+  const { countryFlag, teamLogo } = playerCardData;
   const avg = useMemo(() => {
     return Math.round(
       stats.reduce((acc, cur) => acc + cur.points, 0) / stats.length
@@ -53,27 +56,23 @@ export default function SidePanel({ mirrored = false }: SidePanelProps) {
         />
       </span>
       {/* This panel is not visible below lg */}
-      <div className="font-orbitron z-10 text-[2.5vw] font-bold md:text-[5vw] lg:text-[3.8vw] xl:text-[3vw]">
+      <div className="font-orbitron z-10 text-[2.5vw] font-bold md:text-[6vw] lg:text-[5vw] xl:text-[3vw]">
         <div style={getSkewTransform(mirrored, 3)}>{avg}</div>
       </div>
 
-      <div className="z-10 aspect-square w-[50%] overflow-hidden rounded-full">
-        <img
-          src="/images/AGU.jpg"
-          alt="AGU team logo"
-          className="h-full w-full object-cover"
-          style={getSkewTransform(mirrored, 2)}
-        />
-      </div>
+      <TeamLogo
+        src={teamLogo.src}
+        alt={teamLogo.alt}
+        className="w-[50%]"
+        style={getSkewTransform(mirrored, 2)}
+      />
 
-      <div className="z-10 aspect-[4/3] w-[85%]">
-        <img
-          src="/images/Flag_of_Turkey.svg.webp"
-          alt="Flag of Turkey"
-          className="h-full w-full object-contain"
-          style={getSkewTransform(mirrored, 2)}
-        />
-      </div>
+      <CountryFlag
+        src={countryFlag.src}
+        alt={countryFlag.alt}
+        className="w-[85%]"
+        style={getSkewTransform(mirrored, 2)}
+      />
     </motion.div>
   );
 }
