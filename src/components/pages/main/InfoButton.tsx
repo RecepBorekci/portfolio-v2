@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
-import { infoButtonAnimation } from '../animation/infoMenu';
+import { infoButtonAnimation } from '@animation/infoMenu';
 
 interface InfoButtonProps {
   icon: IconType;

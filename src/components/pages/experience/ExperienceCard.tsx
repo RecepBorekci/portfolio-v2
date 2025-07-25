@@ -1,8 +1,8 @@
-import { Experience } from '../types/portfolio';
-import ViewMoreLink from './ViewMoreLink';
-import TagPill from './TagPill';
+import { Experience } from '@customTypes/portfolio';
+import ViewMoreLink from '@components/common/ViewMoreLink';
+import TagPill from '@components/common/TagPill';
 import { motion } from 'motion/react';
-import { experienceCardAnimations } from '../animation/seasonPage';
+import { experienceCardAnimations } from '@animation/seasonPage';
 
 interface ExperienceCardProps {
   experience: Experience;

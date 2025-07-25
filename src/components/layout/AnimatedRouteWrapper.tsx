@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useLocation } from 'react-router-dom';
-import { pageTransitionVariants } from '../animation/common';
+import { pageTransitionVariants } from '@animation/common';
 
 interface AnimatedRouteWrapperProps {
   children: React.ReactNode;

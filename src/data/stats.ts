@@ -1,4 +1,4 @@
-import { StatCategory } from '../types/portfolio';
+import { StatCategory } from '@customTypes/portfolio';
 
 export const statsPageData: StatCategory[] = [
   {

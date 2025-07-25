@@ -1,11 +1,11 @@
-import { playerCardData } from '../data/playerCard';
-import svg from './PlayerCardBackground.svg';
-import StatPair from './StatPair';
+import { playerCardData } from '@data/playerCard';
+import svg from '@assets/images/PlayerCardBackground.svg';
+import StatPair from '@components/pages/stats/StatPair';
 import { motion } from 'motion/react';
-import { playerCardAnimations } from '../animation/mainPage';
+import { playerCardAnimations } from '@animation/mainPage';
 import { useMemo } from 'react';
-import CountryFlag from './CountryFlag';
-import TeamLogo from './TeamLogo';
+import CountryFlag from '@components/common/CountryFlag';
+import TeamLogo from '@components/common/TeamLogo';
 
 interface PlayerCardProps {
   size: 'full' | 'mini';

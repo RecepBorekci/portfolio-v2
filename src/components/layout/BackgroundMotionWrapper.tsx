@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import BackgroundImage from './BackgroundImage';
-import { backgroundAnimations } from '../animation/mainPage';
+import { backgroundAnimations } from '@animation/mainPage';
 
 export default function BackgroundMotionWrapper({
   isMainPage,

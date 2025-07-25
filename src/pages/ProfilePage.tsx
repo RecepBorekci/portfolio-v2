@@ -1,14 +1,14 @@
-import ProfileAttributeList from '../components/ProfileAttributeList';
-import PlayerCard from '../components/PlayerCard';
-import { profilePageData } from '../data/profile';
-import { ProfileData } from '../types/portfolio';
+import ProfileAttributeList from '@components/pages/profile/ProfileAttributeList';
+import PlayerCard from '@components/pages/main/PlayerCard';
+import { profilePageData } from '@data/profile';
+import { ProfileData } from '@customTypes/portfolio';
 import { motion } from 'motion/react';
 import {
   profileContainerAnimation,
   profileImageAnimation,
   playerCardAnimation,
   profileContentAnimation,
-} from '../animation/profilePage';
+} from '@animation/profilePage';
 
 function ProfilePage() {
   const {

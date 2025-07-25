@@ -1,11 +1,11 @@
-import PlayerCard from '../components/PlayerCard';
-import SidePanel from '../components/SidePanel';
-import Platform from '../components/Platform.svg?react';
+import PlayerCard from '@components/pages/main/PlayerCard';
+import SidePanel from '@components/pages/main/SidePanel';
+import Platform from '@assets/svgs/Platform.svg?react';
 import {
   PageContainer,
   ResponsiveContainer,
   DesktopContainer,
-} from '../components/MainPageLayout';
+} from '@components/layout/MainPageLayout';
 
 // Mobile/Tablet Layout
 const MobileLayout = () => (

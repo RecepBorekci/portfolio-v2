@@ -1,8 +1,8 @@
-import { seasonPageData } from '../data/experiences';
-import ExperienceCard from '../components/ExperienceCard';
-import { Experience } from '../types/portfolio';
+import { seasonPageData } from '@data/experiences';
+import ExperienceCard from '@components/pages/experience/ExperienceCard';
+import { Experience } from '@customTypes/portfolio';
 import { motion } from 'motion/react';
-import { seasonContainerAnimation } from '../animation/seasonPage';
+import { seasonContainerAnimation } from '@animation/seasonPage';
 
 function SeasonPage() {
   const experiences: Experience[] = seasonPageData;
