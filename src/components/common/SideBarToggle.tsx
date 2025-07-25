@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
-import { sidebarToggleAnimation } from '../animation/infoMenu';
+import { sidebarToggleAnimation } from '@animation/infoMenu';
 
 interface SideBarToggleProps {
   isCollapsed: boolean;

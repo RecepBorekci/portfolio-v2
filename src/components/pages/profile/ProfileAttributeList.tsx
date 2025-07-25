@@ -1,9 +1,9 @@
-import { Language, Hobby } from '../types/portfolio';
+import { Language, Hobby } from '@customTypes/portfolio';
 import { motion } from 'motion/react';
 import {
   attributeItemAnimation,
   attributeListAnimation,
-} from '../animation/profilePage';
+} from '@animation/profilePage';
 
 // Generic type that accepts either strings, Language objects, or Hobby objects
 type AttributeItem = string | Language | Hobby;

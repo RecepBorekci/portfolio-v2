@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
-import { playerCardData } from '../data/playerCard';
-import { Stat } from '../types/portfolio';
-import LeftSidePanelBackground from './LeftSidePanelBackground.svg';
-import RightSidePanelBackground from './RightSidePanelBackground.svg';
+import { playerCardData } from '@data/playerCard';
+import { Stat } from '@customTypes/portfolio';
+import LeftSidePanelBackground from '@assets/images/LeftSidePanelBackground.svg';
+import RightSidePanelBackground from '@assets/images/RightSidePanelBackground.svg';
 import { motion } from 'motion/react';
-import { sidePanelAnimations } from '../animation/mainPage';
-import CountryFlag from './CountryFlag';
-import TeamLogo from './TeamLogo';
+import { sidePanelAnimations } from '@animation/mainPage';
+import CountryFlag from '@components/common/CountryFlag';
+import TeamLogo from '@components/common/TeamLogo';
 
 interface SidePanelProps {
   mirrored?: boolean;

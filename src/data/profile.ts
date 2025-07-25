@@ -1,5 +1,5 @@
-import { ProfileData } from '../types/portfolio';
-import { LANGUAGE_STYLES } from '../constants/languageStyles';
+import { ProfileData } from '@customTypes/portfolio';
+import { LANGUAGE_STYLES } from '@constants/languageStyles';
 
 export const profilePageData: ProfileData = {
   name: 'Recep Börekci',

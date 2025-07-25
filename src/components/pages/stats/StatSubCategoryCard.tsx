@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { StatSubCategory } from '../types/portfolio';
+import { StatSubCategory } from '@customTypes/portfolio';
 import {
   getStatColorByValue,
   getSubCategoryConfig,
-} from '../constants/statThemes';
-import AnimatedNumber from './AnimatedNumber';
+} from '@constants/statThemes';
+import AnimatedNumber from '@components/common/AnimatedNumber';
 import {
   statSubCategoryAnimations,
   STATS_ANIMATION,
-} from '../animation/statsPage';
+} from '@animation/statsPage';
 
 interface StatSubCategoryCardProps {
   substatistic: StatSubCategory;

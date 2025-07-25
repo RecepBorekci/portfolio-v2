@@ -1,4 +1,4 @@
-import { Experience } from '../types/portfolio';
+import { Experience } from '@customTypes/portfolio';
 
 export const seasonPageData: Experience[] = [
   {

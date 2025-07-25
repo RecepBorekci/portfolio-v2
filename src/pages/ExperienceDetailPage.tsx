@@ -1,13 +1,13 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { seasonPageData } from '../data/experiences';
-import { Experience } from '../types/portfolio';
-import ExperiencePageHeader from '../components/ExperiencePageHeader';
-import ExperiencePageDescription from '../components/ExperiencePageDescription';
-import ExperiencePageLearned from '../components/ExperiencePageLearned';
-import ExperiencePageTags from '../components/ExperiencePageTags';
-import ReturnButton from '../components/ReturnButton';
-import { experienceDetailAnimations } from '../animation';
+import { seasonPageData } from '@data/experiences';
+import { Experience } from '@customTypes/portfolio';
+import ExperiencePageHeader from '@components/pages/experience/ExperiencePageHeader';
+import ExperiencePageDescription from '@components/pages/experience/ExperiencePageDescription';
+import ExperiencePageLearned from '@components/pages/experience/ExperiencePageLearned';
+import ExperiencePageTags from '@components/pages/experience/ExperiencePageTags';
+import ReturnButton from '@components/common/ReturnButton';
+import { experienceDetailAnimations } from '@animation/experienceDetailPage';
 
 type Params = {
   slug: string;

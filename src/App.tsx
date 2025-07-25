@@ -1,10 +1,10 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import InfoMenu from './components/InfoMenu';
-import AnimatedRouteWrapper from './components/AnimatedRouteWrapper';
-import BackgroundMotionWrapper from './components/BackgroundMotionWrapper';
+import InfoMenu from '@components/pages/main/InfoMenu';
+import AnimatedRouteWrapper from '@components/layout/AnimatedRouteWrapper';
+import BackgroundMotionWrapper from '@components/layout/BackgroundMotionWrapper';
 import { routes } from './routes';
 import { useRef, useState, useEffect } from 'react';
-import { routeIndexMap } from './animation/common';
+import { routeIndexMap } from '@animation/common';
 
 function App() {
   const location = useLocation();

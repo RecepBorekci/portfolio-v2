@@ -1,6 +1,6 @@
 import { FaUser, FaCalendarAlt, FaChartBar, FaHome } from 'react-icons/fa';
 
-import { InfoMenuItem } from '../types/portfolio';
+import { InfoMenuItem } from '@customTypes/portfolio';
 
 export const infoMenuData: {
   buttonData: InfoMenuItem[];

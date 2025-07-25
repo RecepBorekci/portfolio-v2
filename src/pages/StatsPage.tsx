@@ -1,8 +1,8 @@
 import React from 'react';
-import StatCategoryCard from '../components/StatCategoryCard';
-import StatSubCategoryCard from '../components/StatSubCategoryCard';
-import { statsPageData } from '../data/stats';
-import { StatCategory } from '../types/portfolio';
+import StatCategoryCard from '@components/pages/stats/StatCategoryCard';
+import StatSubCategoryCard from '@components/pages/stats/StatSubCategoryCard';
+import { statsPageData } from '@data/stats';
+import { StatCategory } from '@customTypes/portfolio';
 
 const StatsPage: React.FC = () => {
   const professionalSkillCategories: StatCategory[] = statsPageData;

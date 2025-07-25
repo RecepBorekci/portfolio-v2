@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { StatCategory } from '../types/portfolio';
-import {
-  getStatColorByValue,
-  getCategoryConfig,
-} from '../constants/statThemes';
-import AnimatedNumber from './AnimatedNumber';
-import {
-  statCategoryAnimations,
-  STATS_ANIMATION,
-} from '../animation/statsPage';
+import { StatCategory } from '@customTypes/portfolio';
+import { getStatColorByValue, getCategoryConfig } from '@constants/statThemes';
+import AnimatedNumber from '@components/common/AnimatedNumber';
+import { statCategoryAnimations, STATS_ANIMATION } from '@animation/statsPage';
 
 interface StatCategoryCardProps {
   category: StatCategory;

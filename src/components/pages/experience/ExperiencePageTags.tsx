@@ -1,4 +1,4 @@
-import TagPill from './TagPill';
+import TagPill from '@components/common/TagPill';
 
 interface ExperiencePageTagsProps {
   tags: string[];

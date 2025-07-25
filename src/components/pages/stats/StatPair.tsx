@@ -1,4 +1,4 @@
-import { Stat } from '../types/portfolio';
+import { Stat } from '@customTypes/portfolio';
 
 interface StatPairProps {
   stat: Stat;

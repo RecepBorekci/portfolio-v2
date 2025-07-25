@@ -1,11 +1,11 @@
 import InfoButton from './InfoButton';
-import SideBarToggle from './SideBarToggle';
-import { InfoMenuItem } from '../types/portfolio';
-import { infoMenuData } from '../data/infoMenu';
+import SideBarToggle from '@components/common/SideBarToggle';
+import { InfoMenuItem } from '@customTypes/portfolio';
+import { infoMenuData } from '@data/infoMenu';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import clsx from 'clsx';
-import { infoMenuContainerAnimation } from '../animation/infoMenu';
+import { infoMenuContainerAnimation } from '@animation/infoMenu';
 
 export default function InfoMenu() {
   const buttonData: InfoMenuItem[] = infoMenuData.buttonData;

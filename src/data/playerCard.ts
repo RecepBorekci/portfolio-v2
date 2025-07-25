@@ -1,4 +1,4 @@
-import { Stat } from '../types/portfolio';
+import { Stat } from '@customTypes/portfolio';
 
 export const playerCardData: {
   name: string;

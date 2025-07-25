@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ReturnButton from '../components/ReturnButton';
+import ReturnButton from '@components/common/ReturnButton';
 
 function ExperienceNotFoundPage() {
   return (
