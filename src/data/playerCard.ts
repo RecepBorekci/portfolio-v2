@@ -15,14 +15,14 @@ export const playerCardData: {
   stats: Stat[];
 } = {
   name: 'Recep Börekci',
-  profileImage: '/images/profile.png',
+  profileImage: './images/profile.png',
   position: 'CAM',
   countryFlag: {
-    src: '/images/Flag_of_Turkey.svg.webp',
+    src: './images/Flag_of_Turkey.svg.webp',
     alt: 'Flag of Turkey',
   },
   teamLogo: {
-    src: '/images/AGU.jpg',
+    src: './images/AGU.jpg',
     alt: 'AGU team logo',
   },
   stats: [
