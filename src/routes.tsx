@@ -7,27 +7,27 @@ import ExperienceNotFoundPage from './pages/ExperienceNotFoundPage';
 
 export const routes = [
   {
-    path: '/',
+    path: './',
     element: <MainPage />,
   },
   {
-    path: '/profile',
+    path: './profile',
     element: <ProfilePage />,
   },
   {
-    path: '/season',
+    path: './season',
     element: <SeasonPage />,
   },
   {
-    path: '/season/:slug',
+    path: './season/:slug',
     element: <ExperienceDetailPage />,
   },
   {
-    path: '/stats',
+    path: './stats',
     element: <StatsPage />,
   },
   {
-    path: '/experience-not-found',
+    path: './experience-not-found',
     element: <ExperienceNotFoundPage />,
   },
 ];

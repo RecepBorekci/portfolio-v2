@@ -8,13 +8,14 @@ import { routeIndexMap } from '@animation/common';
 
 function App() {
   const location = useLocation();
-  const isMainPage = location.pathname === '/';
+  const isMainPage = location.pathname === './';
   const [direction, setDirection] = useState<number>(0);
-  const prevLocationRef = useRef<string>('/');
+  const prevLocationRef = useRef<string>('./');
 
   // Calculate direction based on route changes
   useEffect(() => {
     const currentPath = location.pathname;
+
     const prevPath = prevLocationRef.current;
 
     // Get route indices for direction calculation
