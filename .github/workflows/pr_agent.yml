@@ -1,7 +1,8 @@
 on:
   pull_request:
     types: [opened, reopened, ready_for_review]
-  issue_comment:
+  issue_comment: 
+   types: [created]
 jobs:
   pr_agent_job:
     if: ${{ github.event.sender.type != 'Bot' }}
@@ -18,3 +19,5 @@ jobs:
         env:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_REVIEWER.REQUIRE_TESTS_REVIEW: "false" # Disable tests review
+          PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 5 # Increase number of code suggestions
