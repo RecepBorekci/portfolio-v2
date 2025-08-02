@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Roboto';
-  src: url('src/assets/fonts/Roboto-Regular.ttf') format('truetype');
+  src: url('@assets/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('src/assets/fonts/Inter-Regular.ttf') format('truetype');
+  src: url('@assets/fonts/Inter-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Orbitron';
-  src: url('src/assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  src: url('@assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'ChakraPetch';
-  src: url('src/assets/fonts/ChakraPetch-Regular.ttf') format('truetype');
+  src: url('@assets/fonts/ChakraPetch-Regular.ttf') format('truetype');
 }
 
 @import 'tailwindcss';
