@@ -34,7 +34,7 @@ export default function ProfileAttributeList({
                   initial={attributeItemAnimation.initial}
                   animate={attributeItemAnimation.animate(index, i)}
                   key={i}
-                  className="rounded-full border border-yellow-400 bg-yellow-400/20 px-2 py-1 text-xs font-medium text-yellow-300"
+                  className="rounded-full border border-yellow-400 bg-yellow-400/20 px-2 py-1 text-sm font-medium text-yellow-300"
                 >
                   {item}
                 </motion.span>
@@ -105,7 +105,7 @@ export default function ProfileAttributeList({
       initial={attributeListAnimation.initial}
       animate={attributeListAnimation.animate(index)}
     >
-      <h3 className="mb-2 border-b border-white/20 pb-1 text-xl font-semibold">
+      <h3 className="mb-2 border-b border-white/20 pb-1 text-2xl font-semibold">
         {title}
       </h3>
       {renderItems()}
