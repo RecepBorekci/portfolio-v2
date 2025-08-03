@@ -38,8 +38,8 @@
   "theme_color": "#3F9B0B",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/portfolio-v2/",
-  "scope": "/portfolio-v2/",
+  "start_url": "./",
+  "scope": "./",
   "screenshots": [
     {
       "src": "./screenshot-desktop.png",
