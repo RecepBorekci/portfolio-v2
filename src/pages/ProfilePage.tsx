@@ -43,7 +43,7 @@ function ProfilePage() {
             className="w-[220px] object-contain sm:w-[280px] md:w-[320px] lg:w-[380px]"
           />
         </motion.div>
-        <div className="flex items-center justify-center md:col-span-1 lg:hidden">
+        <div className="hidden items-center justify-center sm:flex md:col-span-1 lg:hidden">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -70,13 +70,13 @@ function ProfilePage() {
               initial={profileContentAnimation.initial}
               animate={profileContentAnimation.animate}
               transition={profileContentAnimation.transition}
-              className="col-span-5 flex flex-col justify-center gap-2 px-4 lg:col-span-3"
+              className="col-span-5 flex flex-col justify-center gap-2 px-0 lg:col-span-3 lg:px-4"
             >
-              <h1 className="text-4xl font-bold">{name}</h1>
-              <h2 className="text-2xl font-semibold text-yellow-400">
+              <h1 className="text-3xl font-bold md:text-4xl">{name}</h1>
+              <h2 className="text-xl font-semibold text-yellow-400 md:text-2xl">
                 {title}
               </h2>
-              <p className="text-lg text-gray-200">{description}</p>
+              <p className="text-md text-gray-200 md:text-lg">{description}</p>
             </motion.div>
           </div>
 

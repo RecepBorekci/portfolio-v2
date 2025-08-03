@@ -15,7 +15,7 @@ function SeasonPage() {
         transition={seasonContainerAnimation.transition}
         className="container mx-auto w-full rounded-xl border border-yellow-400/10 bg-gradient-to-br from-black/60 via-gray-900/60 to-yellow-900/30 p-10 shadow-2xl"
       >
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}

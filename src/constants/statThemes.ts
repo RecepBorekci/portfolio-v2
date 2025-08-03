@@ -34,7 +34,8 @@ export const getStatColorByValue = (value: number): string => {
 export const COMPONENT_SIZES = {
   CATEGORY: {
     SMALL: {
-      container: 'w-[30%] flex-shrink-0 flex flex-col justify-center',
+      container:
+        'w-[30%] min-w-[100px] flex-shrink-0 flex flex-col justify-center',
       circle: 'w-16 h-16',
       title: 'text-xs',
       value: 'text-lg',
@@ -53,7 +54,7 @@ export const COMPONENT_SIZES = {
         'text-gray-200 pr-2 text-xs font-medium tracking-wide leading-relaxed',
       value: 'text-sm',
       progressBar: {
-        container: 'h-1 mt-1',
+        container: 'h-1 mt-1 hidden sm:block',
         bar: 'h-1',
       },
     },
