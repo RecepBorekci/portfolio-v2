@@ -1,5 +1,5 @@
 {
-  "id": "/",
+  "id": "/portfolio-v2/",
   "name": "Recep's Portfolio",
   "short_name": "Recep Portfolio",
   "description": "Personal soccer-game-themed portfolio showcasing my development projects and professional experience",
@@ -38,8 +38,8 @@
   "theme_color": "#3F9B0B",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "screenshots": [
     {
       "src": "./screenshot-desktop.png",
