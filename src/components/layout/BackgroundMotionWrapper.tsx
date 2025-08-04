@@ -1,6 +1,5 @@
-import { motion } from 'motion/react';
 import BackgroundImage from './BackgroundImage';
-import { backgroundAnimations } from '@animation/mainPage';
+import clsx from 'clsx';
 
 export default function BackgroundMotionWrapper({
   isMainPage,
@@ -8,21 +7,15 @@ export default function BackgroundMotionWrapper({
   isMainPage: boolean;
 }) {
   return (
-    <motion.div
-      initial={false}
-      animate={isMainPage ? 'main' : 'other'}
-      variants={backgroundAnimations.variants}
-      transition={backgroundAnimations.transition}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-      }}
+    <div
+      className={clsx(
+        'absolute top-0 left-0 z-0 h-full w-full',
+        isMainPage
+          ? 'blur-none brightness-100'
+          : 'bg-black/30 blur-md brightness-50'
+      )}
     >
       <BackgroundImage />
-    </motion.div>
+    </div>
   );
 }
