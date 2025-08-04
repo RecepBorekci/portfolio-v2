@@ -1,22 +1,36 @@
 import { Easing, Transition } from 'motion';
 
 // Common animation variants and constants used across multiple components
-export const pageTransitionVariants = {
-  enter: (direction: number) => ({
-    y: direction > 0 ? -100 : 100,
-    opacity: 0,
-    zIndex: 1,
-  }),
-  center: {
-    y: 0,
-    opacity: 1,
-    zIndex: 1,
-  },
-  exit: (direction: number) => ({
-    y: direction < 0 ? -100 : 100,
-    opacity: 0,
-    zIndex: 0,
-  }),
+export const getPageTransitionVariants = (isMobile: boolean) => {
+  return isMobile
+    ? {
+        enter: {
+          opacity: 0,
+          scale: 0.97,
+        },
+        center: {
+          opacity: 1,
+          scale: 1,
+        },
+        exit: {
+          opacity: 0,
+          scale: 0.97,
+        },
+      }
+    : {
+        enter: (direction: number) => ({
+          y: direction > 0 ? -100 : 100,
+          opacity: 0,
+        }),
+        center: {
+          y: 0,
+          opacity: 1,
+        },
+        exit: (direction: number) => ({
+          y: direction < 0 ? -100 : 100,
+          opacity: 0,
+        }),
+      };
 };
 
 export const routeIndexMap: { [key: string]: number } = {

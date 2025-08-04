@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useLocation } from 'react-router-dom';
-import { pageTransitionVariants } from '@animation/common';
+import { getPageTransitionVariants } from '@animation/common';
+import useCheckMobileScreen from '@hooks/useCheckMobileScreen';
 
 interface AnimatedRouteWrapperProps {
   children: React.ReactNode;
@@ -12,6 +13,9 @@ export default function AnimatedRouteWrapper({
   direction,
 }: AnimatedRouteWrapperProps) {
   const location = useLocation();
+  const isMobile = useCheckMobileScreen();
+  const pageTransitionVariants = getPageTransitionVariants(isMobile);
+
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.div
@@ -29,6 +33,7 @@ export default function AnimatedRouteWrapper({
           position: 'relative',
           width: '100%',
           height: '100%',
+          willChange: 'transform, opacity',
         }}
       >
         {children}
